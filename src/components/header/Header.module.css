@@ -1,0 +1,48 @@
+#HeaderDiv{
+    height: 8.12rem;
+    background: url("../../assets/svg/banner.svg") no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #FFFFFF;
+    padding: 0px 0 0 7.5rem;
+}
+#HeaderDiv img{
+    /* height: 10.56rem ; */
+}
+#headerText{
+    font-size: 1.56rem;
+    color: #FFFFFF;
+    height: 30px;
+    margin-top: 20px;
+}
+#HeaderDiv p{
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    line-height: 8px;
+}
+
+#imgDiv{
+    display: flex;
+    column-gap: 0;
+}
+#sports_img{
+    position: relative;
+    margin-top: -0.5rem;
+    /* width: 11rem; */
+    height: 15rem;
+    
+}
+#gamePad_img{
+    position: relative;
+    margin-bottom: -2.5rem;
+    /* width: 11rem; */
+    height: 18rem;
+}
+#back_img{
+    margin-top: 1.75rem;
+    padding-left: 7.5rem;
+    /* margin-bottom: 2.43rem; */
+    cursor: pointer;
+}

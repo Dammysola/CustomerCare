@@ -1,0 +1,386 @@
+#Personal_Info_mainDiv {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F9F9F9;
+}
+
+#Personal_Info_wrapperDiv {
+    padding: 3.8rem 7.5rem;
+}
+
+#Onboarded_Text {
+    color: #000000;
+    font-size: 1.25rem;
+    text-align: end;
+    margin-bottom: 1.5rem;
+}
+
+#Onboarded_Text span {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+#balance_game_HistoryDiv {
+    display: flex;
+    align-items: center;
+    column-gap: 3rem;
+}
+
+#Coin_BalanceDiv {
+    width: 18.87rem;
+    height: 6.93rem;
+    border-radius: 1.25rem;
+    column-gap: 1.5rem;
+    align-items: center;
+    display: flex;
+    padding: 1rem;
+    box-sizing: border-box;
+    /* background-color: #3D3A5C; */
+    border: 1px solid #3D3A5C;
+    font-size: 1.25rem;
+    color: #0E093C;
+}
+
+#Game_historyDiv {
+    width: 18.87rem;
+    height: 6.93rem;
+    border-radius: 1.25rem;
+    column-gap: 1.5rem;
+    align-items: center;
+    display: flex;
+    padding: 1rem;
+    box-sizing: border-box;
+    background-color: #0E093C;
+    font-size: 1.25rem;
+    color: #FFFFFF;
+}
+
+#balance_game_HistoryDiv p {
+    height: 0.8rem;
+    line-height: 0.9rem;
+}
+
+#Coin_BalanceDiv #coinDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 0.5rem;
+    background-color: #FFFFFF;
+}
+
+#padDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 0.5rem;
+    background-color: #FFFFFF;
+}
+
+#Game_historyDiv #padDiv img {
+    width: 4.7rem;
+}
+
+#balance_buttonDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3.4rem;
+}
+
+#dropdown {
+    display: none;
+}
+
+#dropDiv:hover #dropdown {
+    display: block;
+    font-size: 0.75rem;
+    color: #666666;
+    font-weight: bold;
+    background-color: #FFFFFF;
+    width: 9.62rem;
+    height: 2.37rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    /* margin: 0 0 9rem 2rem; */
+    margin: -3rem 0 0 7rem;
+    box-sizing: border-box;
+    box-shadow: 0.5rem 0.5rem 1rem 0 rgb(0, 0, 0, .1);
+    position: absolute;
+
+}
+
+#Personal_Info_buttonDiv {
+    display: flex;
+
+}
+
+#Personal_Info_buttonDiv button {
+    width: 7.93rem;
+    height: 2.3rem;
+    border-radius: 0.5rem;
+    border: none;
+    font-size: 0.9rem;
+    color: #FFFFFF;
+    background-color: #FC9E2F;
+}
+
+#Personal_Info_buttonDiv button:nth-child(2) {
+    background-color: #ED2F2F;
+    margin: 0 1rem;
+}
+
+#Personal_Info_buttonDiv button:nth-child(3) {
+    background-color: #43C22F;
+}
+
+.Personal_Info_headerText {
+    color: #1A1A1A;
+    font-size: 1.55rem;
+    line-height: 1.5rem;
+}
+
+#Personal_Info_tableDiv {
+    width: 100%;
+    min-height: 19.12rem;
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+    box-sizing: border-box;
+    margin-bottom: 3.3rem;
+}
+
+#Personal_Info_tableDiv table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#Personal_Info_tableDiv #headerTable {
+    height: 84px;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+#Personal_Info_tableDiv tr {
+    color: #666666;
+    font-size: 0.9rem;
+    height: 13.88rem;
+    border-bottom: 1px solid #c5c4c4;
+}
+
+#Personal_Info_tableDiv tr:last-child {
+    border-bottom: none;
+}
+
+#Personal_Info_tableDiv #Personal_Info_tr {
+    border-bottom: none;
+}
+
+#Personal_Info_tableDiv #BankDetails_Div {
+    display: flex;
+    flex-direction: column;
+}
+
+#Personal_Info_tableDiv .BankDetails_BoldText {
+    font-weight: bold;
+    margin-top: -10px;
+    line-height: 0.9rem;
+}
+
+#Personal_Info_tableDiv th,
+td {
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+#Personal_Info_tableDiv th {
+    text-align: left;
+}
+
+#Personal_Info_tableDiv #statusText {
+    min-width: 2rem;
+    max-width: 4.5rem;
+    height: 26px;
+    background-color: rgba(49, 195, 100, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    padding: 5px;
+    box-sizing: border-box;
+    color: #31C364;
+}
+
+#Subscription {
+    width: 2.8rem;
+    height: 1.3rem;
+    background-color: #D6AB1B;
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#Personal_Info_Card_wrapper {
+    width: 100%;
+    display: flex;
+    column-gap: 2rem;
+}
+
+#Personal_Info_Report_mainDiv {
+    width: 100%;
+    height: 22.56rem;
+    border-radius: 1.25rem;
+    background-color: #FFFFFF;
+    padding: 0.6rem 2rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.9rem;
+}
+
+#Personal_Info_ReportTextDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.3rem;
+}
+
+#Personal_Info_ReportTextDiv #ReportHeader {
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+#Personal_Info_ReportTextDiv #dateText {
+    font-size: 0.95rem;
+    color: #707070;
+}
+
+#Personal_Info_ReportWrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.9rem;
+}
+
+.Personal_Info_ReportDiv {
+    width: 100%;
+    height: 5.43rem;
+    background-color: #F9F9F9;
+    display: flex;
+    column-gap: 2rem;
+    align-items: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    color: #666666;
+}
+
+.Personal_Info_ReportDiv button {
+    width: 5.25rem;
+    height: 1.87rem;
+    font-size: 0.75rem;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.Personal_Info_ReportDiv #ReportText {
+    width: 90%;
+    color: #666666;
+}
+
+.Personal_Info_ReportDiv .Report_Header2 {
+    font-weight: bold;
+    height: 0.5rem;
+    font-size: #262626;
+}
+
+#Personal_Info_graphReport_Div {
+    width: 100%;
+    display: flex;
+    margin: 5rem 0;
+    column-gap: 2rem;
+}
+
+#no_complaintDiv {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#no_complaintDiv p {
+    color: #000000;
+    font-size: 1.5rem;
+    line-height: 0.1rem;
+}
+
+#Dashboard_RevenueText {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1.5px solid #E3E3E3;
+    font-size: 1.125rem;
+    color: #003E79;
+    margin-bottom: 1rem;
+}
+
+#Dashboard_lineChart_Two {
+    display: flex;
+    flex-direction: column;
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    height: 22.56rem;
+}
+
+.date_inputDiv {
+    margin-top: -1.5rem;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.date_inputDiv p {
+    color: #707070;
+    font-size: 0.95rem;
+    height: 0;
+}
+
+.searchDiv input {
+    width: 14.5rem;
+    height: 2.5rem;
+    border-radius: 0.75rem;
+}
+
+.searchDiv {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.searchDiv img {
+    position: absolute;
+    padding-left: 0.75rem;
+    top: 1.75rem;
+}
+
+.download_img {
+    height: 39px;
+    margin-bottom: -1rem;
+}
+
+
+/* #HistoryTable_WrapperDiv{
+    width: 100%;
+    background-color: #FFFFFF;
+} */

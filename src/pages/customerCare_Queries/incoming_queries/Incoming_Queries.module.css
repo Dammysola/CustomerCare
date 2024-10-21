@@ -1,0 +1,129 @@
+#Incoming_Queries_mainDiv{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F9F9F9;
+}
+#Incoming_Queries_wrapperDiv{
+    padding:  5rem 7.5rem;
+}
+#Query_incomingTextDiv {
+    display: flex;
+    justify-content: space-between;
+    color: #1A1A1A;
+    font-size: 1.56rem;
+    box-sizing: border-box;
+}
+#searchDiv img {
+    position: absolute;
+    width: 15px;
+    left: 1rem;
+    top: 1.8rem;
+    /* fill: #9e9ea7; */
+}
+#searchDiv {
+    margin-top: -0.95rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#search_filterDiv {
+    display: flex;
+    column-gap: 1.87rem;
+    align-items: center;
+}
+
+#search_filterDiv input {
+    width: 23.56rem;
+    height: 2.5rem;
+    border-radius: 0.75rem;
+    background-color: #FFFFFF;
+    padding-left: 2.5rem;
+}
+#filterImg{
+    height: 2.5rem;
+}
+
+#Incoming_Queries_tableWrapperDiv{
+    width: 100%;
+    background-color: #FFFFFF;
+    min-height: 30rem;
+    
+}
+#Incoming_Queries_tableWrapperDiv table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#Incoming_Queries_tableWrapperDiv #headerTable {
+    height: 4.5rem;
+    color: #000000;
+    font-size: 1.1rem;
+    font-weight: lighter;
+}
+
+#Incoming_Queries_tableWrapperDiv tr {
+    height: 15.6rem;
+    border-bottom: 1px solid #c5c4c4;
+    color: #666666;
+    font-size: 0.98rem;
+}
+.tableText{
+    font-weight: bold;
+    color: #262626;
+}
+
+.ReportText{
+    width: 15rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical; 
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+}
+
+#Incoming_Queries_tableWrapperDiv tr:last-child {
+    border-bottom: none;
+}
+
+#Incoming_Queries_tableWrapperDiv th,
+td {
+    padding: 0 1.8rem;
+}
+
+#Incoming_Queries_tableWrapperDiv th {
+    text-align: left;
+}
+
+#statusText{
+    background-color: rgba(252, 158, 47, 0.2);
+    border: none;
+    color: #FC9E2F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.81rem;
+    width: 4.25rem;
+    border-radius: 0.25rem;
+    height: 1.62rem; 
+}
+#usernameText{
+    display: flex;
+    align-items: center;
+    color: #262626;
+    font-size: 0.9rem;
+    font-weight: bold;
+    column-gap: 0.5rem;
+}
+#usernameText img{
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 100%;
+}
+
+#verified_img {
+    margin-left: -1rem;
+    margin-top: -0.9rem;
+    position: absolute;
+    width: 1.5rem;
+}

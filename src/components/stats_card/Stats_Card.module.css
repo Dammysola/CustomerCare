@@ -1,0 +1,23 @@
+#Stats_Card_mainDiv{
+    flex: 1 1 300px;
+}
+.Stats_CardDiv{
+    height: 100%;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+    display: flex;
+    padding: 0rem 1.5rem;
+    box-sizing: border-box;
+}
+#Stats_Card_img_textDiv{
+    display: flex;
+   column-gap: 1.5rem; 
+}
+.Card_figure{
+    font-size: 1.5rem;
+    height: 0.5rem;
+}
+.Card_text{
+    font-size: 1.2rem;
+}

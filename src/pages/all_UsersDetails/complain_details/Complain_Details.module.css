@@ -1,0 +1,210 @@
+#Complain_Details_mainDiv{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F9F9F9;
+}
+#Complain_Details_wrapperDiv{
+    padding: 7rem 7.5rem;
+}
+.Personal_Info_headerText{
+    color: #1A1A1A;
+    font-size: 1.55rem;
+    line-height: 1.5rem;
+}
+.Personal_Info_tableDiv {
+    width: 100%;
+    height: 23.62rem;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    /* margin-top: 16px; */
+    box-sizing: border-box;
+    margin-bottom: 3.3rem;
+}
+
+.Personal_Info_tableDiv table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.Personal_Info_tableDiv #headerTable {
+    height: 8.8rem;
+    color: #000000;
+    font-size: 1rem;
+    font-weight: lighter;
+}
+
+.Personal_Info_tableDiv tr {
+    color: #666666;
+    font-size: 0.9rem;
+    height: 13.88rem;
+    border-bottom: 1px solid #c5c4c4;
+}
+.Personal_Info_tableDiv #Personal_Info_tr{
+    border-bottom: none;
+}
+.Personal_Info_tableDiv #BankDetails_Div {
+    display: flex;
+    flex-direction: column;
+}
+
+#customerCare{
+    display: flex;
+}
+/* .Personal_Info_tableDiv .BankDetails_BoldText {
+    font-weight: bold;
+    margin-top: -10px;
+    line-height: 0.9rem;
+} */
+
+.Personal_Info_tableDiv th,
+td {
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+#Personal_Info_tableDiv th {
+    text-align: left;
+}
+
+.Personal_Info_tableDiv #statusText {
+    width: 4.8rem;
+    height: 26px;
+    background-color: rgba(49, 195, 100, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    padding: 5px;
+    box-sizing: border-box;
+    color: #31C364;
+}
+.Personal_Info_tableDiv .ReportDiv{
+    width: 18rem;
+}
+#Complain_Details_tableDiv_two{
+    width: 100%;
+    height: 33.3rem;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+#Complain_Details_tableDiv_two #Personal_Info_tr {
+    margin-top: -5rem;
+    color: #666666;
+    font-size: 0.9rem;
+    height: 24.5rem;
+}
+
+ #headlineText{
+    color: #262626;
+    font-weight: bold;
+ }
+.Personal_Info_tableDiv th, td{
+    padding: 0 40px;
+    box-sizing: border-box;
+
+}
+.Personal_Info_tableDiv th{
+    text-align: left;
+}
+#Staff_Card_WrapperDiv img{
+    width: 7.5rem;
+    height: 7.5rem;
+    border-radius: 8px;
+}
+#Staff_Card_WrapperDiv button{
+    width: 6.93rem;
+    height: 30px;
+    background-color: #075070;
+    font-size: 0.75rem;
+    color: #FFFFFF;
+    padding: 7px;
+    box-sizing: border-box;
+}
+.Staff_Card_careRep{
+    width: 12.8rem;
+    height: px;
+    color: #000000;
+}
+.Staff_Card_nameText{
+    font-size: 1.25rem;
+    height: 8px; 
+    color: #000000;
+}
+.Staff_Card_online_signalDiv{
+    width: 1rem;
+    height: 1rem;
+    background-color: #59C150;
+    border-radius: 100%;
+}
+.Staff_Card_onlineDiv{
+    display: flex;
+    column-gap: 8px;
+    align-items: center;
+}
+.Revenue_earningDiv{
+    width: 18.75rem;
+    height: 17.56rem;
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+#Revenue_progressDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 0.85rem;
+}
+#Revenue_progressBar{
+    width: 10.62rem;
+    height: 1.5rem;
+    background-color: #003E79;
+    border-radius: 0.8rem;
+}
+#Revenue_progressBar_two{
+    width: 10.62rem;
+    height: 1.5rem;
+    background-color: #003E79;
+}
+.Revenue_earningDiv img{
+    width: 3rem;
+    text-align: center;
+}
+.Revenue_earningDiv #Revenue_percentText{
+    font-size: 1.12rem;
+    color: #000000;
+    font-weight: bold;
+    text-align: center;
+}
+.Revenue_earningDiv .earningText{
+    font-size: 1rem;
+    color: #989797;
+    height: 0px;
+}
+.Revenue_earningDiv .priceText{
+    font-size: 1.12rem;
+    color: #000000;
+    font-weight: bold;
+}
+.Revenue_earningDiv .Revenue_infoText{
+    width: 100%;
+    font-size: 0.9rem;
+    color: #989797;
+    text-align: center;
+    margin-top: 1.3rem;
+}
+#Revenue_total_EarningDiv{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.line{
+    width: 100%;
+    border: 1px dashed #666666;
+    margin-bottom: 2.5rem;
+}

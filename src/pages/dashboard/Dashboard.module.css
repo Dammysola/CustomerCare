@@ -1,0 +1,275 @@
+#CustomerCare_Dashboard_mainDiv {
+    min-height: 100%;
+    background-color: #F9F9F9;
+
+}
+
+#CustomerCare_Dashboard_wrapperDiv {
+    padding: 3rem 7.5rem;
+}
+
+#Dashboard_CardDiv {
+    display: flex;
+    column-gap: 2rem;
+}
+
+#AssignedTicket_textDiv {
+    display: flex;
+    justify-content: space-between;
+    color: #232323;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.ticketButton {
+    color: #232323;
+    border: none;
+    font-size: 1.12rem;
+    background-color: transparent;
+}
+
+.toggle_buttonActive {
+    color: #616FEC;
+    background-color: transparent;
+    font-size: 1.12rem;
+
+    border: none;
+    border-bottom: 1px solid #616FEC;
+
+}
+
+#ticketButtonDiv {
+    display: flex;
+    column-gap: 1.5rem;
+}
+
+#searchDiv img {
+    position: absolute;
+    width: 15px;
+    left: 1rem;
+    top: 1.9rem;
+    fill: #9e9ea7;
+}
+
+#searchDiv {
+    margin-top: -0.95rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#searchDiv input {
+    width: 11.3rem;
+    height: 2.5rem;
+    border-radius: 0.75rem;
+    padding-left: 2.5rem;
+    background-color: #F9F9F9;
+}
+
+
+#Ticket_HeaderDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+#Dashboard_TicketWrapperDiv {
+    width: 100%;
+    height: 25.12rem;
+    background-color: #FFFFFF;
+    padding: 1rem 1.5rem;
+    box-sizing: border-box;
+    border-radius: 1rem;
+}
+
+#ticketTable_wrapperDiv table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#ticketTable_wrapperDiv #headerTable {
+    height: 3rem;
+    color: #000000;
+    font-size: 0.9rem;
+    font-weight: lighter;
+    border-bottom: none;
+}
+
+#ticketTable_wrapperDiv td img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 100%;
+}
+#ticketTable_wrapperDiv td button{
+    width: 5.1rem;
+    height: 1.37rem;
+    border-radius: 0.5rem;
+    color: #FFFFFF;
+    font-size: 0.75rem;
+    padding: 0.5rem;
+}
+
+#ticketTable_wrapperDiv tr {
+    height: 5.5rem;
+    border-bottom: 0.px solid #c5c4c4;
+}
+
+#ticketTable_wrapperDiv tr:last-child{
+    border-bottom: none;
+}
+#ticketTable_wrapperDiv th, td{
+    /* padding: 0 rem; */
+}
+#ticketTable_wrapperDiv th{
+    text-align: left;
+}
+
+#performanceDiv{
+    width: 100%;
+}
+#Ticket_entireDiv{
+    width: 100%;
+}
+#Staff_details_Daily_CallDiv{
+    width: 100%;
+    height: 25.12rem;
+    background-color: #FFFFFF;
+    border-radius: 1.03rem; 
+    color: #707070;
+    box-sizing: border-box;
+}
+#Daily_Call_headerDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    /* padding: 0 2rem; */
+    box-sizing: border-box;
+    color: #0E093C;
+}
+#Daily_Call_headerDiv #dateText{
+    font-size: 0.88rem;
+    color:#707070 ;
+}
+#dateDiv{
+    display: flex;
+    column-gap: 2rem;
+    align-items: center;
+}
+#Daily_Call_headerDiv button{
+    width: 4.68rem;
+    height: 1.68rem;
+    border: none;
+    background-color: #0E093C;
+    border-radius: 0.43rem;
+    cursor: pointer;
+    color: #FFFFFF;
+}
+#Staff_details_Daily_CallDiv table{
+    width: 100%;
+}
+#Staff_details_Daily_CallDiv tr{
+    color: #767676;
+    font-size: 1.12rem;
+    height: 3rem;
+}
+
+.Daily_CallText{
+    color: #0E093C;
+    font-weight: bold;
+}
+
+.Ticket_tableData {
+    font-size: 1rem;
+    font-weight: 500;
+    height: 0;
+    color: #232323;
+}
+
+#disputeText {
+    color: #0E093C;
+    font: italic;
+    font-size: 0.9rem;
+}
+#Dashboard_Ticket_PerformanceDiv{
+    display: flex;
+    column-gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+
+.dashboardTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+}
+
+.dashboardTable th,
+.dashboardTable td {
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.dashboardTable th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+}
+
+.userInfo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.userInfo img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+
+.disputeText {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+#Staff_details_Daily_CallDiv .dashboardTable td {
+    font-size: 0.875rem;
+}
+
+#Staff_details_Daily_CallDiv .dashboardTable button {
+    background-color: transparent;
+    border: none;
+    color: #0E093C;
+    font-size: 0.75rem;
+    border-radius: 0.5rem;
+    height: 1.87rem;
+    width: 5.12rem;
+    cursor: pointer;
+}
+.no_queryDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    font-size: 1.2rem;
+    /* margin-top: 5rem; */
+}
+/* Add responsive styles */
+@media (max-width: 768px) {
+    .dashboardTable {
+        font-size: 0.875rem;
+    }
+
+    .dashboardTable th,
+    .dashboardTable td {
+        padding: 0.5rem;
+    }
+
+    .userInfo img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+}

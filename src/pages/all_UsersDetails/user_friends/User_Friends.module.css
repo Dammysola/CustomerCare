@@ -1,0 +1,68 @@
+#All_Users_mainDiv{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F9F9F9;
+}
+#All_Users_wrapperDiv{
+   padding: 4.81rem 7.5rem;
+}
+#input_FilterDiv {
+    display: flex;
+    justify-content: end;
+    /* align-items: center; */
+    column-gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+#viewchange_button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+#input_FilterDiv #dateText{
+    font-size: 0.93rem;
+    color: #707070;
+    line-height: 1.4rem;
+}
+
+
+#input_FilterDiv #searchDiv img{
+    position: absolute;
+    width: 15px;
+    padding-left: 0.7rem;
+    padding-top: 1rem;
+
+}
+#searchDiv{
+    display: flex;
+    align-items: center;
+    height: 0;
+}
+
+#searchDiv input{
+    /* position: absolute; */
+    position: relative;
+    width: 7.6rem;
+    border-radius: 0.75rem;
+    padding-left:2rem;
+    box-sizing: border-box;
+    height: 2.43rem;  
+}
+.footsoldier_listGrid_view{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #707070;
+    font-size: 0.93rem;
+}
+.footsoldier_listGrid_view img{
+    width: 1.25rem;
+    height: 1.25rem;
+}
+#Online_Players_Card{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    justify-content: center;
+    gap: 2.2rem;
+}

@@ -1,0 +1,95 @@
+#All_Users_mainDiv{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F9F9F9;
+}
+#All_Users_wrapperDiv{
+   padding: 0rem 7.5rem 5rem;
+}
+#All_Users_toggleDiv{
+    width: 23.81rem;
+    height: 3.06rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.62rem;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    background: linear-gradient(120deg, #F6F6F6, #F2EFEF);
+}
+.All_Users_listDiv_button{
+    background-color: transparent;
+    border: none;
+    color: #666666;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+.toggleDiv_buttonActive{
+    min-width: 50px;
+    background-color: #0E093C;
+    border: none;
+    color: #FFFFFF;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    height: 2rem;
+    font-size: 0.9rem;
+}
+#All_Users_toggle_dateDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2.9rem;
+}
+#input_FilterDiv {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+#input_FilterDiv p {
+    display: flex;
+    column-gap: 8px;
+    font-size: 0.932rem;
+    color: #707070;
+}
+#input_FilterDiv input {
+    background-color: #FFFFFF;
+    width: 18.87rem;
+    height: 39px;
+}
+
+#InputField_images img {
+    height: 39px;
+    margin-right: 12px;
+}
+#searchDiv {
+    margin-top: -0.95rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#searchDiv img {
+    position: absolute;
+    top: 1.75rem;
+    width: 15px;
+    left: 1rem;
+    fill: #9e9ea7;
+}
+#searchDiv input {
+    width: 14.5rem;
+    border-radius: 12px;
+    padding-left: 40px;
+    box-sizing: border-box;
+    height: 39px;
+}
+#All_Users_Card{
+    row-gap: 2rem;
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    justify-content: center;
+    gap: 2rem;
+    word-wrap: break-word;
+}

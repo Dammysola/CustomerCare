@@ -1,0 +1,30 @@
+#Performance_Popup_mainDiv{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .3);
+    position: absolute;
+    z-index: 999;
+}
+#Performance_Popup_wrapperDiv{
+    width: 23.4rem;
+    height: 13.8rem;
+    border-radius: 0.5rem;
+    background-color: #FFFFFF;
+    padding: 0.5rem 1.5rem 1.5rem;
+}
+#imgDiv{
+    height: 2rem;
+     text-align: right;
+}
+#imgDiv img{
+    width: 1.2rem;
+    height: 1.2rem;
+}
+#Query_details{
+    color: #666666;
+    font-size: 0.9rem;
+    line-height: 1.5rem;
+}

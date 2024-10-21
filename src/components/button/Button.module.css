@@ -1,0 +1,22 @@
+.button{
+    /* width: 300px; */
+    width: 100%;
+    height: 46px;
+    color: #FFFFFF;
+    background-color: #0B438D;
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition */
+
+}
+.button:hover{
+    background-color: #0E093C;
+    animation: ease-in();
+}

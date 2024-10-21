@@ -1,0 +1,43 @@
+.Suspension_mainDiv{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .3);
+}
+.Suspension_WrapperDiv{
+    width: 28.31rem;
+    height: 10.37rem;
+    border-radius: 24px;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* row-gap: 2rem; */
+    justify-content: space-around;
+}
+.Suspension_WrapperDiv p{
+    font-size: 1.25rem;
+    color: #000000;
+}
+#btnDiv{
+    display: flex; 
+    column-gap: 24px;
+}
+#btnDiv button{
+    width: 6.93rem;
+    height: 46px;
+    font-size: 0.7rem;
+    border: 1px solid #075070;
+    background-color: transparent;
+    border-radius: 8px;
+   margin-top: -20px;
+    color: #075070;
+}
+#btnDiv #yesbutton{
+    background-color: #075070;
+    color: #FFFFFF;
+
+}

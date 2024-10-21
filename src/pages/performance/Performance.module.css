@@ -1,0 +1,160 @@
+#Performance_mainDiv{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #F9F9F9;
+}
+#Performance_wrapperDiv{
+    padding: 3rem 7.5rem 10rem;
+    /* min-height: 100vh; */
+    min-height: 150vh;
+    
+}
+#review_historyText{
+    font-size: 1rem;
+    color: #0E093C;
+    text-align: end;
+    line-height: 3.5rem;
+}
+#Performance_CardDiv{
+    display: flex;
+    column-gap: 2rem;
+}
+
+#performanceDiv{
+    width: 100%;
+    margin-top: -0.4rem;
+}
+#Staff_details_Daily_CallDiv{
+    width: 100%;
+    height: 25.12rem;
+    background-color: #FFFFFF;
+    border-radius: 1.03rem; 
+    color: #707070;
+    box-sizing: border-box;
+}
+#Daily_Call_headerDiv{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.1rem;
+    line-height: 0;
+    margin-bottom: 0.5rem;
+    /* height: 3rem; */
+    /* padding: 0 2rem; */
+    box-sizing: border-box;
+    color: #0E093C;
+}
+#Daily_Call_headerDiv #dateText{
+    font-size: 0.88rem;
+    color:#707070 ;
+}
+#dateDiv{
+    display: flex;
+    column-gap: 2rem;
+    align-items: center;
+}
+#Daily_Call_headerDiv button{
+    width: 4.68rem;
+    height: 1.68rem;
+    border: none;
+    background-color: #0E093C;
+    border-radius: 0.43rem;
+    color: #FFFFFF;
+}
+#Staff_details_Daily_CallDiv table{
+    width: 100%;
+}
+#Staff_details_Daily_CallDiv tr{
+    color: #767676;
+    font-size: 1.12rem;
+    height: 3rem;
+}
+
+.Daily_CallText{
+    color: #0E093C;
+    font-weight: bold;
+}
+
+.Ticket_tableData {
+    font-size: 1rem;
+    font-weight: 500;
+    height: 0;
+    color: #232323;
+}
+
+
+
+#CustomerCare_Progress_Wrapper {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 27.62rem;
+    padding: 2rem;
+    padding-top: 1rem;
+    box-sizing: border-box;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+
+#CustomerCare_textDiv {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    color: #000000;
+}
+
+#monthDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #000000;
+    column-gap: 0.8rem;
+    width: 8.25rem;
+    height: 2.25rem;
+    border: 1px solid #C7C2C2;
+    border-radius: 0.5rem;
+}
+
+.Staff_progress {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#Staff_details {
+    display: flex;
+    justify-content: space-between;
+}
+
+#Staff_details p {
+    color: #000000;
+}
+
+#imgDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 0.9rem;
+    font-size: 1rem;
+    color: #000000;
+}
+
+#imgDiv p {
+    width: 6rem;
+}
+
+.Staff_progress #progressDiv {
+    height: 0.62rem;
+    width: 100%;
+    background-color: #075070;
+    border-radius: 0.62rem;
+    margin-bottom: 1.5rem;
+}
+#Performance_SatisfactionDiv{
+    display: flex;
+    column-gap: 2rem;
+    margin-top: 5rem;
+}

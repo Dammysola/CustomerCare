@@ -1,0 +1,39 @@
+
+#App_Pagination_mainDiv{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 3rem;
+}
+#App_Pagination_mainDiv button {
+    /* width: 1.6rem;
+    height: 1.7rem;
+    border-radius: 0.3rem; */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+.page_number_div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#pagination_Div img{
+    transform: rotate(270deg);
+    transition: transform 0.5s ease-in-out;
+}
+.arrow_div{
+    width: 1.6rem;
+    height: 1.7rem;
+    border-radius: 0.3rem;
+    border: 1px solid #DEDEDE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#pagination_Div{
+    display: flex;
+    column-gap: 0.5rem;
+}
+

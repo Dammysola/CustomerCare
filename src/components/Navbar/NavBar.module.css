@@ -1,0 +1,65 @@
+#CustomerCare_NavBar_mainDiv{
+    width: 100%;
+    height: 5.43rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 7.5rem;
+    box-sizing: border-box;
+    background-color: #FFFFFF;
+    margin: 0;
+    color: #0E093C;
+    font-weight: 400;
+}
+.NavBar_text{
+    color: #0E093C;
+    font-size: 1rem;
+}
+.Nav_styled_Link{
+    background-color: #0E093C;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    font-size: 1rem;
+    min-width: 5rem;
+    padding: 1rem;
+    box-sizing: border-box;
+    height: 2.18rem;
+    border-radius: 7px;
+    margin-bottom: 0;
+}
+#Navbar_firstWrapperDiv{
+    display: flex;
+    column-gap: 2.9rem;
+    align-items: center;
+}
+#logoText{
+    font-weight: bold;
+}
+#Navbar_textsDiv{
+    display: flex;
+    align-items: center;
+    column-gap: 2.62rem;
+}
+#imgDiv{
+    display: flex;
+    align-items: center;
+    /* margin-top: 1.1rem;/ */
+    column-gap: 0.5rem;
+}
+#Navbar_lastLineDiv{
+    display: flex;
+    column-gap: 1.6rem;
+    align-items: center;
+}
+#Navbar_lastLineDiv #line{
+    width: 1.7px;
+    height: 3rem;
+    /* margin-top: 1rem; */
+    background-color: #0E093C;
+}
+
+

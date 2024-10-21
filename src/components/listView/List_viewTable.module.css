@@ -1,0 +1,68 @@
+#All_FootSoldiers_tableDiv {
+    width: 100%;
+    min-height: 31.81rem;
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    margin-top: 1.56rem;
+}
+#All_FootSoldiers_tableDiv table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#All_FootSoldiers_tableDiv th,
+td {
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+
+}
+
+#All_FootSoldiers_tableDiv th {
+    text-align: left;
+}
+
+#All_FootSoldiers_tableDiv button {
+    width: 5.3rem;
+    height: 1.37rem;
+    font-size: 0.7rem;
+    border-radius: 8px;
+    padding: 0.3rem;
+    box-sizing: border-box;
+}
+
+#All_FootSoldiers_tableDiv tr {
+    color: #666666;
+    height: 3.43rem;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #B1B1B1;
+}
+#All_FootSoldiers_tableDiv tr:last-child{
+    border-bottom: none;
+}
+#All_FootSoldiers_tableDiv #headerTable {
+    background-color: #E8E3F9;
+    height: 44px;
+    color: #000000;
+    font-size: 1.2rem;
+    border-bottom: none;
+}
+
+#All_FootSoldiers_tableDiv .number {
+    font-weight: bold;
+    color: #000000;
+    font-size: 1rem;
+}
+
+.person_name_td{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+}
+.person_name_td img{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+}
+

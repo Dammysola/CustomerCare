@@ -1,0 +1,132 @@
+#Performance_Details_mainDiv{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    position: absolute;
+    z-index: 50;
+}
+#Performance_Details_wrapperDiv{
+    width: 100%;
+    min-height: 100vh;
+    padding: 2.3rem 2.62rem;
+    box-sizing: border-box;
+    background-color: #F9F9F9;
+    
+}
+#Performance_Details_headerText{
+   color: #707070;
+    font-size: 1.5rem;
+}
+#contacts_wrapperDiv{
+    display: flex;
+    column-gap: 4.6rem;
+}
+.contactDiv{
+    color: #0E093C;
+    font-size: 1rem;
+}
+.contact_Text{
+    font-size: 1rem;
+    font-weight: 500;
+}
+#transparentDiv{
+    width: 15.27rem;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, .3);
+    cursor: pointer;
+}
+#second_headerText{
+    color: #0E093C;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+#HeaderDiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#HeaderDiv button{
+    border: none;
+    background-color: transparent;
+    font-size: 0.93rem;
+    color: #666666;
+}
+#Performance_Details_table_wrapperDiv{
+    width: 100%;
+    min-height: 20rem;
+    background-color: #FFFFFF;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    margin-bottom: 3rem;
+
+}
+#Performance_Details_table_wrapperDiv table{
+    width: 100%;
+    border-collapse: collapse;   
+}
+#Performance_Details_table_wrapperDiv #headerTable{
+    height: 2.75rem;
+    background-color: #F1F1F1;
+    color: #000000;
+    font-size: 1.1rem;
+}
+#Performance_Details_table_wrapperDiv tr{
+    font-size:0.93rem;
+    height: 6rem;
+    color: #666666;
+    /* border-bottom: none; */
+}
+
+#Performance_Details_table_wrapperDiv th, td{
+    padding: 0 1rem;
+}
+
+#Performance_Details_table_wrapperDiv th{
+    text-align: left;
+}
+.User_detail_td{
+    display: flex;
+    align-items: center;
+    column-gap: 0.5rem;
+    font-size: 0.9rem;
+    color: #666666;
+    font-weight: bold;
+}
+.user_img{
+    width: 1.12rem;
+    height: 1.12rem;
+    border-radius: 100%;
+}
+#recordingDiv{
+     color: #262626;
+    font-size: 0.9rem; 
+}
+#recordingDiv img{
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 100%;
+}
+.recording_text{
+    font-weight: 600;
+}
+#queryText{
+    width: 15rem;
+    cursor: pointer;
+}
+.statusText{
+    width: 4.53rem;
+    height: 1.62rem;
+    background-color: rgba(49, 195, 100, .2);
+    color: #31C364;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#Performance_Details_table_wrapperDiv button{
+    width: 5.1rem;
+    height: 1.37rem;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+}

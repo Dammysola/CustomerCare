@@ -1,0 +1,67 @@
+#History_component_mainDiv{
+    /* flex: 1;
+    max-width: 500px; */
+}
+#History_component_wrapperDiv{
+    display: flex;
+    align-items: center;
+    background-color: #FFFFFF;
+    height: 10.5rem;
+    padding: 1.5rem;
+    box-sizing: border-box;
+    column-gap: 1.5rem;
+    color: #000000;
+    
+    border-radius: 1rem;
+}
+#video_playDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8.37rem;
+    height: 7.5rem;
+    background-color: #F6F6F6;
+    border-radius: 0.5rem;
+}
+#History_component_wrapperDiv p{
+    height: 0.6rem;
+}
+video_playDiv img{
+    width: 5rem;
+    height: 6.25rem;
+}
+#History_component_wrapperDiv .room_Name{
+    color: #000000;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: -0.3rem;
+}
+.time_stamp{
+    font-size: 0.9rem;
+    color: #8A8A8A;
+    margin-bottom: 1.5rem;
+}
+#History_component_AvatarDiv{
+    display: flex;
+    align-items: center;
+    column-gap: 0.27rem;
+}
+#History_component_AvatarDiv p{
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    /* /* align-items: center; */
+    font-size: 0.27rem;
+    color: #1A1A1A; 
+    height: 0;
+    text-align: center;
+}
+#History_component_AvatarDiv img{
+    width: 1.11rem;
+    height: 1.11rem;
+}
+.imgDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

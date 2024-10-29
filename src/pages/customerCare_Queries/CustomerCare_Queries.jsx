@@ -6,6 +6,7 @@ import issues from '../../assets/svg/Issues.svg'
 import Total_Card from '../../components/total_Card/Total_Card'
 import arrow_down from '../../assets/svg/arrow_down.svg'
 import blue from '../../assets/svg/blue.svg'
+import black from '../../assets/svg/black.svg'
 import gold from '../../assets/svg/gold.svg'
 import no_complaint from '../../assets/svg/no_complaint.svg'
 import Button from '../../components/button/Button'
@@ -44,14 +45,14 @@ const CustomerCare_Queries = () => {
 
                 if (data) {
 
-                setQueryCount({
-                    inAppMessages: data.inAppMessages || 0,
-                    pending: data.pending || 0,
-                    resolved: data.resolved || 0,
-                    escalated: data.escalated || 0,
-                    firstThreeIncomingQueries: data.firstThreeIncomingQueries || []
-                });
-                console.log("data", data);
+                    setQueryCount({
+                        inAppMessages: data.inAppMessages || 0,
+                        pending: data.pending || 0,
+                        resolved: data.resolved || 0,
+                        escalated: data.escalated || 0,
+                        firstThreeIncomingQueries: data.firstThreeIncomingQueries || []
+                    });
+                    console.log("data", data);
 
 
                 } else {
@@ -158,7 +159,7 @@ const CustomerCare_Queries = () => {
     return (
         <div id={Style.Queries_mainDiv}>
             <Header
-                headerText={"Incoming Queries"}
+                headerText={"Queries"}
                 headerInfo={"let's get rolling"} />
 
             <div id={Style.Queries_wrapperDiv}>
@@ -235,10 +236,10 @@ const CustomerCare_Queries = () => {
 
                             {/* <div id={Style.Ticket_HeaderDiv}> */}
 
-                                <div id={Style.ticketButtonDiv}>
+                            <div id={Style.ticketButtonDiv}>
 
-                                    <button onClick={() => ticketToggle(0)} className={toggleIndex == 0 ? Style.toggle_buttonActive : Style.ticketButton}>All</button>
-                                </div>
+                                <button onClick={() => ticketToggle(0)} className={toggleIndex == 0 ? Style.toggle_buttonActive : Style.ticketButton}>All</button>
+                            </div>
 
 
                             <div id={Style.ticketTable_wrapperDiv}>
@@ -256,16 +257,22 @@ const CustomerCare_Queries = () => {
                                             incomingQueries !== 0 &&
 
                                             incomingQueries.map((obj, index) => {
-                                                const verify = obj.subscription_type === "blue" ? "black" : "gold"
+
+                                                let verify = obj.subscription_type == "blue" ? blue
+                                                    : obj.subscription_type == "gold" ? gold
+                                                        : obj.subscription_type == "black" ? black : ""
+
                                                 return (
+
                                                     <tr key={index}>
+
                                                         <td>
                                                             <div style={{ display: "flex", columnGap: "0.5rem", alignItems: "center" }}>
 
                                                                 <div>
                                                                     <img id={Style.user_img} src={obj.profile_picture} alt="" />
 
-                                                                    {verify && <img id={Style.verified_img} src={verify ? blue ? blue : gold : ""} alt="" />
+                                                                    {verify && <img id={Style.verified_img} src={verify} alt="" />
                                                                     }
                                                                 </div>
                                                                 <div>

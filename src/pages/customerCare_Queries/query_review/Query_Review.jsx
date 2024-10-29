@@ -97,8 +97,8 @@ const Query_Review = () => {
 
         e.preventDefault()
         updateResolutionState({ 
-            query: userDetails_arr, 
-            
+            details: userDetails_arr, 
+            query: queries_arr,
             email: resolution.email, 
             ticket_id: ticketId, 
             message: resolution.message, 

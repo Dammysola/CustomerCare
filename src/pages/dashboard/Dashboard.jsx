@@ -4,7 +4,9 @@ import Header from "../../components/header/Header"
 import Progress_Bar from '../../components/progress_bar/Progress_Bar'
 import InputField from '../../components/input/InputField'
 import search from '../../assets/svg/Search.svg'
-import avatar from '../../assets/images/avatar.png'
+import blue from '../../assets/svg/blue.svg'
+import black from '../../assets/svg/black.svg'
+import gold from '../../assets/svg/gold.svg'
 import arrow_down from '../../assets/svg/arrow_down-dark.svg'
 import Button from '../../components/button/Button'
 import { Link } from 'react-router-dom'
@@ -90,7 +92,9 @@ const Dashboard = () => {
                 back1={false} />
 
             <div id={Style.CustomerCare_Dashboard_wrapperDiv}>
+
                 <div id={Style.Dashboard_CardDiv}>
+
                     {
                         progressDiv.map((obj) => {
                             return (
@@ -101,6 +105,7 @@ const Dashboard = () => {
                             )
                         })
                     }
+
                 </div>
 
                 <div id={Style.Dashboard_Ticket_PerformanceDiv}>
@@ -114,49 +119,63 @@ const Dashboard = () => {
 
                         <div id={Style.Dashboard_TicketWrapperDiv}>
 
-                            <div id={Style.Ticket_HeaderDiv}>
 
-                                <div id={Style.ticketButtonDiv}>
-                                    <button onClick={() => ticketToggle(0)} className={toggleIndex == 0 ? Style.toggle_buttonActive : Style.ticketButton}>All</button>
-                                </div>
+                            <div id={Style.ticketButtonDiv}>
 
-                                <div id={Style.searchDiv}>
-                                    <img src={search} alt="" />
-                                    <InputField
-                                        placeholder={"Search ticket no"} />
-                                </div>
-
+                                <button id={ Style.toggle_button}>All</button>
                             </div>
 
+
                             <div id={Style.ticketTable_wrapperDiv}>
+
                                 <table className={Style.dashboardTable}>
-                                    <tr id={Style.headerTable}>
-                                        <th>User</th>
-                                        <th>Ticket No</th>
-                                        <th>QueryType</th>
-                                        <th>Action</th>
-                                    </tr>
+
+                                    <thead>
+
+                                        <tr id={Style.headerTable}>
+                                            <th>User</th>
+                                            <th>Ticket No</th>
+                                            <th>QueryType</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
 
                                     <tbody>
 
                                         {
                                             incomingQueries !== 0 &&
 
-                                            incomingQueries.map((obj) => {
+                                            incomingQueries.map((obj, index) => {
+
+
+                                                let verify = obj.subscription_type == "blue" ? blue
+                                                    : obj.subscription_type == "gold" ? gold
+                                                        : obj.subscription_type == "black" ? black : ""
+
+
                                                 return (
-                                                    <tr>
+
+                                                    <tr key={index}>
+
                                                         <td>
                                                             <div style={{ display: "flex", columnGap: "0.5rem", alignItems: "center" }}>
-                                                                <img style={{ width: "2rem", height: "2rem" }} src={obj.profile_picture} alt="" />
+
+                                                                <div>
+                                                                    <img id={Style.user_img} src={obj.profile_picture} alt="" />
+
+                                                                    {verify && <img id={Style.verified_img} src={verify} alt="" />
+                                                                    }
+                                                                </div>
                                                                 <div>
                                                                     <p className={Style.Ticket_tableData}>{obj.username} </p>
                                                                     <p id={Style.disputeText}>{obj.category}</p>
                                                                 </div>
                                                             </div>
                                                         </td>
+
                                                         <td className={Style.Ticket_tableData}>{obj.ticket_id}</td>
                                                         <td className={Style.Ticket_tableData}>{obj.query_type_name}</td>
-                                                        <td><Button text={"Accept"}/></td>
+                                                        <td><Button text={"Accept"} /></td>
 
                                                     </tr>
                                                 )
@@ -166,6 +185,7 @@ const Dashboard = () => {
 
                                     </tbody>
                                 </table>
+
                                 {
 
                                     incomingQueries.length == 0 ?
@@ -175,6 +195,7 @@ const Dashboard = () => {
                                             <p>No Incoming Queries</p>
                                         </div> : ""
                                 }
+
                             </div>
                         </div>
                     </div>
@@ -185,8 +206,11 @@ const Dashboard = () => {
                             <p>Performance</p>
 
                             <div id={Style.dateDiv}>
+
                                 <p id={Style.dateText}>Week One October, 2024 <img src={arrow_down} alt="" /></p>
+                               
                                 <Link to={"/performance"}><button>See All</button></Link>
+                           
                             </div>
                         </div>
 
@@ -251,7 +275,10 @@ const Dashboard = () => {
                                     <td className={Style.Daily_CallText}>44</td>
                                     <td><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
                                 </tr>
+
+
                             </table>
+
                         </div>
                     </div>
                 </div>

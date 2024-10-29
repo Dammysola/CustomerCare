@@ -3,16 +3,13 @@
     background-color: #F9F9F9;
 
 }
-
 #CustomerCare_Dashboard_wrapperDiv {
     padding: 3rem 7.5rem;
 }
-
 #Dashboard_CardDiv {
     display: flex;
     column-gap: 2rem;
 }
-
 #AssignedTicket_textDiv {
     display: flex;
     justify-content: space-between;
@@ -20,57 +17,12 @@
     font-size: 1rem;
     font-weight: 600;
 }
-
-.ticketButton {
-    color: #232323;
-    border: none;
-    font-size: 1.12rem;
-    background-color: transparent;
-}
-
-.toggle_buttonActive {
+#toggle_button {
     color: #616FEC;
     background-color: transparent;
     font-size: 1.12rem;
-
     border: none;
     border-bottom: 1px solid #616FEC;
-
-}
-
-#ticketButtonDiv {
-    display: flex;
-    column-gap: 1.5rem;
-}
-
-#searchDiv img {
-    position: absolute;
-    width: 15px;
-    left: 1rem;
-    top: 1.9rem;
-    fill: #9e9ea7;
-}
-
-#searchDiv {
-    margin-top: -0.95rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-#searchDiv input {
-    width: 11.3rem;
-    height: 2.5rem;
-    border-radius: 0.75rem;
-    padding-left: 2.5rem;
-    background-color: #F9F9F9;
-}
-
-
-#Ticket_HeaderDiv {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     margin-bottom: 1rem;
 }
 
@@ -82,10 +34,10 @@
     box-sizing: border-box;
     border-radius: 1rem;
 }
-
-#ticketTable_wrapperDiv table {
-    border-collapse: collapse;
+.dashboardTable {
     width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
 }
 
 #ticketTable_wrapperDiv #headerTable {
@@ -94,6 +46,23 @@
     font-size: 0.9rem;
     font-weight: lighter;
     border-bottom: none;
+}
+
+.dashboardTable th,
+.dashboardTable td {
+    padding: 0.75rem;
+    text-align: left;
+}
+
+.dashboardTable th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+    color: #495057;
+}
+#dashboardTable td #user_img {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
 }
 
 #ticketTable_wrapperDiv td img {
@@ -118,12 +87,6 @@
 #ticketTable_wrapperDiv tr:last-child{
     border-bottom: none;
 }
-#ticketTable_wrapperDiv th, td{
-    /* padding: 0 rem; */
-}
-#ticketTable_wrapperDiv th{
-    text-align: left;
-}
 
 #performanceDiv{
     width: 100%;
@@ -139,12 +102,16 @@
     color: #707070;
     box-sizing: border-box;
 }
+
+
+
+
+
 #Daily_Call_headerDiv{
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 1.1rem;
-    /* padding: 0 2rem; */
     box-sizing: border-box;
     color: #0E093C;
 }
@@ -152,6 +119,7 @@
     font-size: 0.88rem;
     color:#707070 ;
 }
+
 #dateDiv{
     display: flex;
     column-gap: 2rem;
@@ -198,25 +166,6 @@
     margin-top: 1.5rem;
 }
 
-
-.dashboardTable {
-    width: 100%;
-    border-collapse: separate;
-    border-spacing: 0 0.5rem;
-}
-
-.dashboardTable th,
-.dashboardTable td {
-    padding: 0.75rem;
-    text-align: left;
-}
-
-.dashboardTable th {
-    background-color: #f8f9fa;
-    font-weight: 600;
-    color: #495057;
-}
-
 .userInfo {
     display: flex;
     align-items: center;
@@ -248,6 +197,12 @@
     width: 5.12rem;
     cursor: pointer;
 }
+#verified_img {
+    margin-left: -1rem;
+    margin-top: -0.9rem;
+    position: absolute;
+    width: 0.3rem;
+}
 .no_queryDiv{
     display: flex;
     flex-direction: column;
@@ -255,7 +210,6 @@
     align-items: center;
     color: #000000;
     font-size: 1.2rem;
-    /* margin-top: 5rem; */
 }
 /* Add responsive styles */
 @media (max-width: 768px) {

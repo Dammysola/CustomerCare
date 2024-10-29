@@ -111,12 +111,15 @@ const Resolved_Queries = () => {
                                 currentPosts.length > 0 &&
 
                                 currentPosts.map((obj, index) => {
+                           
+                                    const serialNumber = indexOfFirstPost + index + 1; // Calculate the correct serial number
+                                    
 
                                     let color = obj.status == "Closed" ? true : false
 
                                     return (
                                         <tr id={Style.Personal_Info_tr}>
-                                            <td>{index + 1}</td>
+                                            <td>{serialNumber}</td>
                                             <td>{obj.date}</td>
                                             <td className={Style.tableText}>{obj.ticket_id}</td>
                                             <td className={Style.tableText}>{obj.category}</td>

@@ -11,10 +11,13 @@ const Successful_Resolution = () => {
 
     const {updateSuccessResolutionPopup, resolutionState} = PopupContextHook()
  
-    const { ticket_id, message, query } = resolutionState;
-    const [{username, category}] = query
+    const { ticket_id, message, query, details } = resolutionState;
+    
+    const [{ category }] = query
+    const [{ username }] = details
 
-   console.log(resolutionState);
+   console.log(category);
+   
    console.log(JSON.stringify(query));
    
    

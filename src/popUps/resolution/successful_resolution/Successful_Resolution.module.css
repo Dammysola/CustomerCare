@@ -64,6 +64,7 @@
     line-height: 1.7rem;
     color: #666666;
     font-size: 0.9rem;
+    min-height: 7rem;
 }
 
 #copyText {

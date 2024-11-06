@@ -16,12 +16,6 @@ import no_complaint from '../../assets/svg/no_complaint.svg'
 
 const Dashboard = () => {
 
-    let [toggleIndex, setToggleIndex] = useState(0);
-
-    const ticketToggle = (index) => {
-        setToggleIndex(index)
-    }
-
 
     const { updateLoadingPopup } = PopupContextHook();
 
@@ -96,9 +90,11 @@ const Dashboard = () => {
                 <div id={Style.Dashboard_CardDiv}>
 
                     {
-                        progressDiv.map((obj) => {
+                        progressDiv.map((obj, index) => {
+
                             return (
                                 <Progress_Bar
+                                    key={index}
                                     text={obj.text}
                                     infoText={obj.infoText}
                                     percent={obj.percent} />
@@ -122,7 +118,7 @@ const Dashboard = () => {
 
                             <div id={Style.ticketButtonDiv}>
 
-                                <button id={ Style.toggle_button}>All</button>
+                                <button id={Style.toggle_button}>All</button>
                             </div>
 
 
@@ -208,9 +204,9 @@ const Dashboard = () => {
                             <div id={Style.dateDiv}>
 
                                 <p id={Style.dateText}>Week One October, 2024 <img src={arrow_down} alt="" /></p>
-                               
+
                                 <Link to={"/performance"}><button>See All</button></Link>
-                           
+
                             </div>
                         </div>
 

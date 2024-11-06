@@ -1,5 +1,5 @@
 import React from 'react'
-import { login_url, players, getUsers, queryCount, getMessageQueries, postQueryResolve, getQueryDetails } from "../constant/url_path"
+import { login_url, getUsers, queryCount, getMessageQueries, postQueryResolve, getQueryDetails } from "../constant/url_path"
 import axios from 'axios';
 
 import { setToken, getToken, setEmail } from "../constant/local_storage";

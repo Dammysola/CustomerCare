@@ -7,6 +7,7 @@ import capture from '../../assets/svg/capture.svg'
 import search from '../../assets/svg/Search.svg'
 import InputField from '../input/InputField'
 import { Link } from 'react-router-dom'
+import App_Pagination from '../app_Pagination/App_Pagination'
 // import InputField from '../../../../../components/input/InputField'
 
 
@@ -14,6 +15,10 @@ import { Link } from 'react-router-dom'
 
 
 const Query_com = (props) => {
+
+    const [currentPage, setCurrentPage] = useState(1)
+    const [postsPerPage] = useState(10)
+
 
     const { arr } = props
 
@@ -23,28 +28,51 @@ const Query_com = (props) => {
     let [toggleIndex, setToggleIndex] = useState(0);
 
     const ticketToggle = (index) => {
+
         setToggleIndex(index)
     }
 
     const incomingQueries = array.incomingQueries
-    const resolvedQueries = array.resolvedQueries
+    // const resolvedQueries = array.resolvedQueries
     const escalatedQueries = array.escalatedQueries
 
+
+
     console.log(incomingQueries.length);
-    console.log(resolvedQueries.length);
+    // console.log(resolvedQueries.length);
+
+
+    // Pagination logic
+
+    const indexOfLastPost = currentPage * postsPerPage;
+    const indexOfFirstPost = indexOfLastPost - postsPerPage;
+    const resolvedQueries = array.resolvedQueries.slice(indexOfFirstPost, indexOfLastPost);
+
+
+    // Function to handle pagination
+    const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
+
+
+
     return (
+
+
         <div id={Style.Message_Queries_wrapperDiv}>
 
             <div id={Style.Toggle_InputFieldDiv}>
 
                 <div id={Style.ticketButtonDiv}>
+
                     <button onClick={() => ticketToggle(0)} className={toggleIndex == 0 ? Style.toggle_buttonActive : Style.ticketButton}>Incoming</button>
-                    <button onClick={() => ticketToggle(1)} className={toggleIndex == 1 ? Style.toggle_buttonActive : Style.ticketButton}>In-Progress</button>
+                    {/* <button onClick={() => ticketToggle(1)} className={toggleIndex == 1 ? Style.toggle_buttonActive : Style.ticketButton}>In-Progress</button> */}
                     <button onClick={() => ticketToggle(2)} className={toggleIndex == 2 ? Style.toggle_buttonActive : Style.ticketButton}>Escalated</button>
                     <button onClick={() => ticketToggle(3)} className={toggleIndex == 3 ? Style.toggle_buttonActive : Style.ticketButton}>Closed</button>
+
                 </div>
 
                 <div id={Style.InputField_filterDiv}>
+
                     <div id={Style.searchDiv}>
                         <img src={search} alt="" />
                         <InputField
@@ -55,9 +83,13 @@ const Query_com = (props) => {
             </div>
 
             <div id={Style.Queries_tableWrapperDiv}>
+
                 <table>
+
                     <thead>
+
                         <tr id={Style.headerTable}>
+
                             <th>S/N</th>
                             <th>Date</th>
                             <th>TicketID</th>
@@ -128,7 +160,7 @@ const Query_com = (props) => {
                                 }) : ""
                         }
 
-
+                        {/* 
                         {
 
                             // In-Progress Queries
@@ -177,7 +209,7 @@ const Query_com = (props) => {
                                         </tr>
                                     )
                                 }) : ""
-                        }
+                        } */}
 
 
                         {
@@ -244,11 +276,14 @@ const Query_com = (props) => {
 
                                 resolvedQueries.map((obj, index) => {
 
-                                    let color = obj.status == "Closed" ? true : false
+                                    const serialNumber = indexOfFirstPost + index + 1; // Calculate the correct serial number
+
+
+                                    // let color = obj.status == "Closed" ? true : false
 
                                     return (
                                         <tr id={Style.Personal_Info_tr} key={index}>
-                                            <td>{index + 1}</td>
+                                            <td>{serialNumber}</td>
                                             <td>{obj.date}</td>
                                             <td className={Style.tableText}>{obj.ticket_id}</td>
                                             <td className={Style.tableText}>{obj.category}</td>
@@ -272,16 +307,18 @@ const Query_com = (props) => {
                                                 </div>
                                             </td>
 
-                                            <td><div className={Style.statusText} style={{ color: "#565C58", backgroundColor: "#565c5833" }}>{obj.status}</div></td>
+                                            <td><div className={Style.statusText} style={{ color: "#31C364", backgroundColor: "#31c36433" }}>{obj.status}</div></td>
 
                                             <td><
                                                 Link to={"/QueryReview"}>
                                                 <button style={{ backgroundColor: "transparent", border: "1px solid #0E093C", color: "#0E093C", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>
-                                                   Reassess
+                                                    Reassess
                                                 </button>
                                             </Link>
                                             </td>
                                         </tr>
+
+
                                     )
                                 }) : ""
 
@@ -290,19 +327,20 @@ const Query_com = (props) => {
                     </tbody>
                 </table>
 
-                { 
-                    toggleIndex == 3 &&
-                resolvedQueries.length == 0 ?
-                    <div className={Style.no_queryDiv}>
 
-                        <p>No Recent Resolved Queries</p>
-                    </div> : ""
+                {
+                    toggleIndex == 3 &&
+                        resolvedQueries.length == 0 ?
+                        <div className={Style.no_queryDiv}>
+
+                            <p>No Recent Resolved Queries</p>
+                        </div> : ""
                 }
 
 
                 {
                     toggleIndex == 0 &&
-                    incomingQueries.length == 0 ?
+                        incomingQueries.length == 0 ?
                         <div className={Style.no_queryDiv}>
 
                             <p>No Recent Incoming Queries</p>
@@ -311,13 +349,25 @@ const Query_com = (props) => {
 
                 {
                     toggleIndex == 2 &&
-                    escalatedQueries.length == 0 ?
+                        escalatedQueries.length == 0 ?
                         <div className={Style.no_queryDiv}>
 
-                        <p>No Recent Escalated Queries</p>
-                    </div> : ""}
+                            <p>No Recent Escalated Queries</p>
+                        </div> : ""}
 
             </div>
+
+            {
+                toggleIndex == 3 &&
+
+                <App_Pagination
+                    postsPerPage={postsPerPage}
+                    totalPosts={array.resolvedQueries.length}
+                    paginate={paginate}
+                    currentPage={currentPage}
+                />
+            }
+
         </div>
     )
 }

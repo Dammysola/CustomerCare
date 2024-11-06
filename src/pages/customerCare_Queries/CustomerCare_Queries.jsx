@@ -39,6 +39,7 @@ const CustomerCare_Queries = () => {
     useEffect(() => {
 
         updateLoadingPopup(true)
+
         getQueryCountProvider({
 
             updateQueryCount: (data) => {
@@ -158,11 +159,13 @@ const CustomerCare_Queries = () => {
 
     return (
         <div id={Style.Queries_mainDiv}>
+
             <Header
                 headerText={"Queries"}
                 headerInfo={"let's get rolling"} />
 
             <div id={Style.Queries_wrapperDiv}>
+
                 <p id={Style.Queries_headerText}>Queries</p>
 
                 <div id={Style.Queries_mapDiv}>
@@ -185,6 +188,7 @@ const CustomerCare_Queries = () => {
                 </div>
 
                 <div id={Style.ticket_mapDiv}>
+
                     {
                         ticket_arr.map((obj, index) => {
 
@@ -314,11 +318,13 @@ const CustomerCare_Queries = () => {
                             <p>Performance</p>
 
                             <div id={Style.dateDiv}>
+
                                 <p id={Style.dateText}>Week One October, 2024 <img src={arrow_down} alt="" /></p>
 
                                 <Link to={"/performance"}>
                                     <button>See All</button>
                                 </Link>
+                                
                             </div>
                         </div>
 

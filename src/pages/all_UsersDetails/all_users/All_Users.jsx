@@ -12,6 +12,10 @@ import Header from '../../../components/header/Header'
 import { Link } from 'react-router-dom'
 import { getAllUsersProvider } from '../../api_detaills/provider/auth_provider'
 
+
+
+
+
 const All_Users = () => {
     // State to manage the active toggle button
 
@@ -41,12 +45,11 @@ const All_Users = () => {
                     subscribedUsers: data.subscribedUsers || [],
                     unsubscribedUsers: data.unsubscribedUsers || []
                 });
-                setIsLoading(false); // Note: setIsLoading is not defined in this component
             }
         });
     }, []);
 
-   
+
 
     // Destructure user arrays for easier access
 
@@ -64,9 +67,9 @@ const All_Users = () => {
 
             <div id={Style.All_Users_wrapperDiv}>
 
-     
 
-          
+
+
 
                 {/* Toggle buttons and filter options */}
 
@@ -79,7 +82,7 @@ const All_Users = () => {
                         <button onClick={() => transactionToggle(0)} className={toggleIndex == 0 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>All</button>
                         <button onClick={() => transactionToggle(1)} className={toggleIndex == 1 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>Subscribed</button>
                         <button onClick={() => transactionToggle(2)} className={toggleIndex == 2 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>Unsubscribed</button>
-                        <button onClick={() => transactionToggle(3)} className={toggleIndex == 3 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>Not-Subscribed</button>
+                        {/* <button onClick={() => transactionToggle(3)} className={toggleIndex == 3 ? Style.toggleDiv_buttonActive : Style.All_Users_listDiv_button}>Not-Subscribed</button> */}
                     </div>
 
                     {/* Date and search filter */}
@@ -111,24 +114,27 @@ const All_Users = () => {
                                 < Staff_Card
                                     key={object.id} // Add a unique key prop
                                     img={object.profile_picture}
-                                    verified={verify } 
+                                    verified={verify}
                                     status={object.status}
                                     name={object.username}
                                     position={object.country}
-                                    to={object.to} />
+                                    to={`/userDetails/${object.phone}`}
+                                    />
                             )
 
                         })
                     }
 
                     {/* Render subscribed users */}
-                    {toggleIndex == 1 &&
+
+                    {
+                        toggleIndex == 1 &&
                         subscribedUsers_arr.map((object) => {
 
                             let verify = object.subscription_type == "blue" ? blue
                                 : object.subscription_type == "gold" ? gold
                                     : object.subscription_type == "black" ? black : ""
-                                        
+
 
                             return (
                                 <Staff_Card
@@ -138,12 +144,15 @@ const All_Users = () => {
                                     status={object.status}
                                     name={object.username}
                                     position={object.country}
-                                    to={object.to} />
+                                    to={`/userDetails/${object.phone}`}
+                                    />
                             )
                         })
                     }
 
-                    {/* Render unsubscribed users */}
+                    
+                        {/* Render unsubscribed users */}
+
                     {toggleIndex == 2 &&
                         unsubscribedUsers_arr.map((object) => {
 
@@ -155,11 +164,13 @@ const All_Users = () => {
                                     status={object.status}
                                     name={object.username}
                                     position={object.country}
-                                    to={object.to} />
+                                    to={`/userDetails/${object.phone}`}
+                                    />
                             )
 
                         })
-                    }
+                    } 
+                    
                 </div>
             </div>
         </div>

@@ -5,4 +5,6 @@ export const queryCount = `${base_url}api/get-query-counts`;
 export const getMessageQueries = `${base_url}api/get-all-queries`;
 export const postQueryResolve = `${base_url}api/resolve-query`;
 export const getQueryDetails = `${base_url}api/get-query-details`;
-export const players = `${base_url}api/game/get-players/2348114528984`;
+export const getUserDetails = `${base_url}api/get-user-details`;
+
+

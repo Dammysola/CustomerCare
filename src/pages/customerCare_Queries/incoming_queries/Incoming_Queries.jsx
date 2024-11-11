@@ -33,7 +33,6 @@ const Incoming_Queries = () => {
 
     useEffect(() => {
 
-        updateLoadingPopup(true)
         getQueryCountProvider({
 
             updateQueryCount: (data) => {
@@ -44,20 +43,13 @@ const Incoming_Queries = () => {
 
                         incomingQueries: data.incomingQueries || []
                     });
-                    console.log("data", data);
-
-
-                    // } else {
-                    //     console.log("err:", data);
-                    //     console.error("Received undefined data from API");
-                    //     // Optionally set some default values or show an error message
-                    // }
-
 
                 }
             }
         });
-        updateLoadingPopup(false);
+        updateLoadingPopup,
+            updateErrorPopup,
+            updateErrorText
     }, []);
 
     console.log(incomingQueriesState);
@@ -104,7 +96,7 @@ const Incoming_Queries = () => {
                         <tbody>
                             {
                                 incomingQueries_arr.length > 0 &&
-                                
+
                                 incomingQueries_arr.map((obj, index) => {
 
                                     return (
@@ -127,12 +119,12 @@ const Incoming_Queries = () => {
 
                                             </td>
                                             <td><div id={Style.statusText}>{obj.status}</div></td>
-                                            <td><
-                                                Link to={"/QueryReview"}>
-                                                <button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>
-                                                    Review
-                                                </button>
-                                            </Link>
+                                            <td>
+                                                <Link to={`/QueryReview/${obj.ticket_id}`}>
+                                                    <button style={{ backgroundColor: "#0E093C", border: "none", color: "#FFFFFF", fontSize: "0.7rem", width: "5.18rem", borderRadius: "8px", height: "1.37rem" }}>
+                                                        Review
+                                                    </button>
+                                                </Link>
                                             </td>
                                         </tr>
                                     )

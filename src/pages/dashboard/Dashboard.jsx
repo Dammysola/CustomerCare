@@ -171,7 +171,11 @@ const Dashboard = () => {
 
                                                         <td className={Style.Ticket_tableData}>{obj.ticket_id}</td>
                                                         <td className={Style.Ticket_tableData}>{obj.query_type_name}</td>
-                                                        <td><Button text={"Accept"} /></td>
+                                                        <td>
+                                                            <Link to={`/QueryReview/${obj.ticket_id}`}>
+                                                                <Button text={"Accept"} />
+                                                            </Link>
+                                                        </td>
 
                                                     </tr>
                                                 )

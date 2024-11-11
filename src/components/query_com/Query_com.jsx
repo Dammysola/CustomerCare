@@ -65,9 +65,8 @@ const Query_com = (props) => {
                 <div id={Style.ticketButtonDiv}>
 
                     <button onClick={() => ticketToggle(0)} className={toggleIndex == 0 ? Style.toggle_buttonActive : Style.ticketButton}>Incoming</button>
-                    {/* <button onClick={() => ticketToggle(1)} className={toggleIndex == 1 ? Style.toggle_buttonActive : Style.ticketButton}>In-Progress</button> */}
                     <button onClick={() => ticketToggle(2)} className={toggleIndex == 2 ? Style.toggle_buttonActive : Style.ticketButton}>Escalated</button>
-                    <button onClick={() => ticketToggle(3)} className={toggleIndex == 3 ? Style.toggle_buttonActive : Style.ticketButton}>Closed</button>
+                    <button onClick={() => ticketToggle(3)} className={toggleIndex == 3 ? Style.toggle_buttonActive : Style.ticketButton}>Resolved</button>
 
                 </div>
 
@@ -78,7 +77,6 @@ const Query_com = (props) => {
                         <InputField
                             placeholder={"Search ticket no"} />
                     </div>
-                    {/* <img id={Style.filter_img} src={filter} alt="" /> */}
                 </div>
             </div>
 

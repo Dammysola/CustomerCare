@@ -8,7 +8,7 @@ import { login_service, getAllUsersService, getQueryCountService, getQueryDetail
 
 
 
-export const login_provider = async (body, navigate, updateLoadingPopup, updateErrorText, updateErrorPopup ) => {
+export const login_provider = async (body, navigate, updateLoadingPopup, updateErrorText, updateErrorPopup) => {
 
     try {
         updateLoadingPopup(true);
@@ -19,12 +19,20 @@ export const login_provider = async (body, navigate, updateLoadingPopup, updateE
 
             updateLoadingPopup(false);
             navigate("/dashboard");
+
         } else {
-            throw new Error('Login failed');
+            updateLoadingPopup(false);
+            updateErrorText(response.data["responseMessage"]);
+            console.log("Error :", err);
+            updateErrorPopup(true)
+            setTimeout(() => {
+                updateErrorPopup(false)
+            }, 2000)
         }
+
     } catch (err) {
         updateLoadingPopup(false);
-        updateErrorText( err.response.data.responseMessage || "Login failed");
+        updateErrorText(err.response.data.responseMessage || "Login failed");
         console.log("Error :", err);
         updateErrorPopup(true);
         setTimeout(() => {
@@ -39,7 +47,7 @@ export const getAllUsersProvider = async ({ updateUsers }) => {
         let response = await getAllUsersService()
 
         if (response.status == 200) {
-      
+
 
             updateUsers(response.data["responseBody"]);
 
@@ -62,7 +70,7 @@ export const getAllUsersProvider = async ({ updateUsers }) => {
 }
 
 
-export const getQueryCountProvider = async ({ updateQueryCount }) => {
+export const getQueryCountProvider = async ({ updateQueryCount, updateErrorPopup, updateErrorText }) => {
 
     try {
         let response = await getQueryCountService()
@@ -72,18 +80,25 @@ export const getQueryCountProvider = async ({ updateQueryCount }) => {
             updateQueryCount(response.data["responseBody"]);
 
             console.log(response.data["responseBody"]);
+
+        }else {
+            updateErrorText(response.data["responseMessage"]);
+            console.log("Error :", err);
+            updateErrorPopup(true)
+            setTimeout(() => {
+                updateErrorPopup(false)
+            }, 2000)
         }
 
-        console.log("eeey:", response.data["responseBody"]);
 
     } catch (err) {
 
-        // updateErrorText(err.response.data.message)
+        updateErrorText(err.response.data.message)
         console.log("Error :", err);
-        // updateErrorPopup(true)
-        // setTimeout(() => {
-        //     updateErrorPopup(false)
-        // }, 2000)
+        updateErrorPopup(true)
+        setTimeout(() => {
+            updateErrorPopup(false)
+        }, 2000)
     }
 
 }
@@ -105,12 +120,12 @@ export const getMessageQueriesProvider = async ({ updateMessageQueries }) => {
     } catch (err) {
 
         console.log("Error :", err);
-       
+
     }
 
 }
 
-export const getQueryDetailsProvider = async ( {updateQueryDetails, url }) => {
+export const getQueryDetailsProvider = async ({ updateQueryDetails, url }) => {
 
     try {
         let response = await getQueryDetailsService(url)
@@ -126,7 +141,7 @@ export const getQueryDetailsProvider = async ( {updateQueryDetails, url }) => {
     } catch (err) {
 
         console.log("Error :", err);
-       
+
     }
 
 }
@@ -155,14 +170,14 @@ export const postQueryResolveProvider = async (body, updateLoadingPopup, updateC
             throw new Error('Resolution failed', response.data);
         }
     } catch (err) {
-       
+
         updateLoadingPopup(false);
-        updateErrorText( err.response.data.responseMessage || "Resolution failed");
+        updateErrorText(err.response.data.responseMessage || "Resolution failed");
         console.log("Error :", err);
         updateErrorPopup(true);
         setTimeout(() => {
             updateErrorPopup(false);
         }, 2000);
-       
+
     }
 }

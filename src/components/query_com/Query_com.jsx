@@ -38,10 +38,6 @@ const Query_com = (props) => {
 
 
 
-    console.log(incomingQueries.length);
-    // console.log(resolvedQueries.length);
-
-
     // Pagination logic
 
     const indexOfLastPost = currentPage * postsPerPage;
@@ -115,7 +111,9 @@ const Query_com = (props) => {
 
 
                                     return (
+
                                         <tr id={Style.Personal_Info_tr} key={index}>
+
                                             <td>{index + 1}</td>
                                             <td>{obj.date}</td>
                                             <td className={Style.tableText}>{obj.ticket_id}</td>
@@ -224,7 +222,9 @@ const Query_com = (props) => {
                                     let color = obj.status == "Pending" ? true : false
 
                                     return (
+
                                         <tr id={Style.Personal_Info_tr} key={index}>
+
                                             <td>{index + 1}</td>
                                             <td>{obj.date}</td>
                                             <td className={Style.tableText}>{obj.ticket_id}</td>
@@ -268,7 +268,7 @@ const Query_com = (props) => {
 
                             // Closed Queries
 
-                            toggleIndex == 3 ?
+                            toggleIndex == 3 &&
 
                                 resolvedQueries.length !== 0 &&
 
@@ -280,7 +280,9 @@ const Query_com = (props) => {
                                     // let color = obj.status == "Closed" ? true : false
 
                                     return (
+
                                         <tr id={Style.Personal_Info_tr} key={index}>
+
                                             <td>{serialNumber}</td>
                                             <td>{obj.date}</td>
                                             <td className={Style.tableText}>{obj.ticket_id}</td>
@@ -318,7 +320,7 @@ const Query_com = (props) => {
 
 
                                     )
-                                }) : ""
+                                }) 
 
                         }
 

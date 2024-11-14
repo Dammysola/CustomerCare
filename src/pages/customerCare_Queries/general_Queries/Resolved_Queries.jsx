@@ -5,9 +5,9 @@ import InputField from '../../../components/input/InputField'
 import search from '../../../assets/svg/Search.svg'
 import filter from '../../../assets/svg/Complete_filter_img.svg'
 import { Link } from 'react-router-dom'
-import { getQueryCountProvider } from '../../api_detaills/provider/auth_provider'
 import { PopupContextHook } from '../../../PopupContext'
 import App_Pagination from "../../../components/app_Pagination/App_Pagination"
+import { getQueryCountProvider } from '../../api_detaills/provider/query_provider'
 
 
 
@@ -16,12 +16,13 @@ const Resolved_Queries = () => {
     const { updateLoadingPopup, updateErrorText, updateErrorPopup } = PopupContextHook();
 
     const [currentPage, setCurrentPage] = useState(1)
-    const [postsPerPage, setPostsPerPage] = useState(10)
+    const [postsPerPage] = useState(10)
 
     const [resolved, setResolved] = useState({
 
         resolvedQueries: []
     })
+
 
     useEffect(() => {
 
@@ -31,24 +32,13 @@ const Resolved_Queries = () => {
 
             updateQueryCount: (data) => {
 
-                if (data) {
+                setResolved({
+                    resolvedQueries: data.resolvedQueries || []
+                });
 
-                    setResolved({
-                        resolvedQueries: data.resolvedQueries || []
-                    });
-                    console.log("data", data);
-
-
-                } else {
-
-                    console.log("err:", data);
-                    // console.error("Received undefined data from API");
-                    // Optionally set some default values or show an error message
-                }
-
-
-                // }
-            }
+            },
+            updateErrorPopup,
+            updateErrorText
         });
         updateLoadingPopup(false);
 
@@ -111,9 +101,9 @@ const Resolved_Queries = () => {
                                 currentPosts.length > 0 &&
 
                                 currentPosts.map((obj, index) => {
-                           
+
                                     const serialNumber = indexOfFirstPost + index + 1; // Calculate the correct serial number
-                                    
+
 
                                     let color = obj.status == "Closed" ? true : false
 
@@ -133,7 +123,7 @@ const Resolved_Queries = () => {
                                                 <p>{obj.agents}</p>
                                             </td>
 
-                                            <td><div className={Style.statusText} style={{ color: "#31C364", backgroundColor: "#31c36433"}}>{obj.status}</div></td>
+                                            <td><div className={Style.statusText} style={{ color: "#31C364", backgroundColor: "#31c36433" }}>{obj.status}</div></td>
 
                                             <td><
                                                 Link to={"/QueryReview"}>

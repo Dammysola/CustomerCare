@@ -14,7 +14,7 @@ import { PopupContextHook } from '../../PopupContext'
 
 const SignIn = () => {
   const navigate = useNavigate();
-  const { updateLoadingPopup, updateErrorText, updateErrorPopup } = PopupContextHook();
+  const { updateLoadingPopup, updateErrorText, updateErrorPopup, updateSignInSuccess} = PopupContextHook();
 
 
   const [signIn, setSignIn] = useState({
@@ -46,7 +46,7 @@ const SignIn = () => {
     let body = signIn;
 
     //This initiates the provider that handles the login API.
-    login_provider(body, navigate, updateLoadingPopup, updateErrorText, updateErrorPopup);
+    login_provider(body, navigate, updateSignInSuccess, updateLoadingPopup, updateErrorText, updateErrorPopup);
 
   }
   const handleSubmit = (e) => {

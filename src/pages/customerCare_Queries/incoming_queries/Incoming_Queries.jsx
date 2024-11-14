@@ -13,8 +13,8 @@ import Button from '../../../components/button/Button'
 import blue from '../../../assets/svg/blue.svg'
 import gold from '../../../assets/svg/gold.svg'
 import black from '../../../assets/svg/black.svg'
-import { getQueryCountProvider } from '../../api_detaills/provider/auth_provider'
 import { PopupContextHook } from '../../../PopupContext'
+import { getQueryCountProvider } from '../../api_detaills/provider/query_provider'
 
 
 
@@ -47,12 +47,10 @@ const Incoming_Queries = () => {
                 }
             }
         });
-        updateLoadingPopup,
-            updateErrorPopup,
+        updateErrorPopup,
             updateErrorText
     }, []);
 
-    console.log(incomingQueriesState);
 
     const incomingQueries_arr = incomingQueriesState.incomingQueries
 
@@ -60,9 +58,11 @@ const Incoming_Queries = () => {
 
     return (
         <div id={Style.Incoming_Queries_mainDiv}>
+
             <Header
                 headerText={"Incoming Queries"}
-                headerInfo={"let's get rolling"} />
+                headerInfo={"let's get rolling"}
+            />
 
             <div id={Style.Incoming_Queries_wrapperDiv}>
 
@@ -80,20 +80,28 @@ const Incoming_Queries = () => {
                 </div>
 
                 <div id={Style.Incoming_Queries_tableWrapperDiv}>
+
                     <table>
-                        <tr id={Style.headerTable}>
-                            <th>S/N</th>
-                            <th>Date</th>
-                            <th>TicketID</th>
-                            <th>Category</th>
-                            <th>Username</th>
-                            <th>QueryType</th>
-                            <th>Query</th>
-                            <th>Status</th>
-                            <th>Action</th>
-                        </tr>
+
+                        <thead>
+
+                            <tr id={Style.headerTable}>
+                                <th>S/N</th>
+                                <th>Date</th>
+                                <th>TicketID</th>
+                                <th>Category</th>
+                                <th>Username</th>
+                                <th>QueryType</th>
+                                <th>Query</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
 
                         <tbody>
+                            
                             {
                                 incomingQueries_arr.length > 0 &&
 

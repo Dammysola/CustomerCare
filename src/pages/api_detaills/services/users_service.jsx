@@ -1,9 +1,15 @@
-import axios from "axios";
-import { getUserDetails } from "../constant/url_path";
+import { getUserDetails, getUsers } from "../constant/url_path";
+import { authAxios } from "./auth_services";
 
 
 
+export const getAllUsersService = async () => {
 
+    const response = await authAxios.get(getUsers);
+
+
+    return response;
+};
 
 
 export const getUserDetailsService = async (phone) => {
@@ -11,7 +17,7 @@ export const getUserDetailsService = async (phone) => {
     const response = await axios.get(`${getUserDetails}/${phone}`);
 
 
-    console.log(response);
-    
     return response;
 };
+
+

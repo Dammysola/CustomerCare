@@ -11,6 +11,7 @@ import Escalate_Query from '../popUps/escalateQuery/Escalate_Query'
 import Successful_escalation from "../popUps/escalateQuery/Successful_escalation"
 import Loading from '../popUps/loading/Loading'
 import Error from '../popUps/error/Error'
+import SignIn_Success from '../popUps/signIn_success/SignIn_Success'
 
 
 
@@ -23,7 +24,7 @@ const MainLayout = () => {
   const showNavbar = location.pathname !== "/" && location.pathname !== "/changePassword";
 
   const {filterPopup, passwordPopup, confirmResolution, successResolution,
-    errorPopup, confirmEscalation, successEscalation, loadingPopup} = PopupContextHook()
+    errorPopup, confirmEscalation, successEscalation, loadingPopup, signInSuccess} = PopupContextHook()
 
 
   return (
@@ -48,6 +49,8 @@ const MainLayout = () => {
       {loadingPopup && <Loading/>}
 
       {errorPopup && <Error/>}
+
+      {signInSuccess && <SignIn_Success/>}
       <div><Outlet /></div >
     </div>
   )

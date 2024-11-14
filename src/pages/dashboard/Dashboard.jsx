@@ -11,13 +11,13 @@ import arrow_down from '../../assets/svg/arrow_down-dark.svg'
 import Button from '../../components/button/Button'
 import { Link } from 'react-router-dom'
 import { PopupContextHook } from '../../PopupContext'
-import { getQueryCountProvider } from '../api_detaills/provider/auth_provider'
 import no_complaint from '../../assets/svg/no_complaint.svg'
+import { getQueryCountProvider } from '../api_detaills/provider/query_provider'
 
 const Dashboard = () => {
 
 
-    const { updateLoadingPopup } = PopupContextHook();
+    const { updateLoadingPopup, updateErrorText, updateErrorPopup } = PopupContextHook();
 
 
 
@@ -30,8 +30,6 @@ const Dashboard = () => {
 
     useEffect(() => {
 
-        updateLoadingPopup(true)
-
         getQueryCountProvider({
             updateQueryCount: (data) => {
 
@@ -41,9 +39,11 @@ const Dashboard = () => {
                 });
                 console.log("data", data);
 
-            }
+            },
+            updateErrorPopup,
+            updateErrorText
         });
-        updateLoadingPopup(false);
+
     }, []);
 
     console.log(queryCounts)

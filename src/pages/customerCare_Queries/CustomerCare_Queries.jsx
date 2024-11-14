@@ -12,8 +12,9 @@ import no_complaint from '../../assets/svg/no_complaint.svg'
 import Button from '../../components/button/Button'
 import Progress_Bar from '../../components/progress_bar/Progress_Bar'
 import { PopupContextHook } from '../../PopupContext'
-import { getQueryCountProvider } from '../api_detaills/provider/auth_provider'
+// import { getQueryCountProvider } from '../api_detaills/provider/auth_provider'
 import { Link } from 'react-router-dom'
+import { getQueryCountProvider } from '../api_detaills/provider/query_provider'
 
 
 
@@ -38,37 +39,23 @@ const CustomerCare_Queries = () => {
 
     useEffect(() => {
 
-        updateLoadingPopup(true)
-
         getQueryCountProvider({
 
             updateQueryCount: (data) => {
 
-                if (data) {
-
-                    setQueryCount({
-                        inAppMessages: data.inAppMessages || 0,
-                        pending: data.pending || 0,
-                        resolved: data.resolved || 0,
-                        escalated: data.escalated || 0,
-                        firstThreeIncomingQueries: data.firstThreeIncomingQueries || []
-                    });
-                    console.log("data", data);
-
-
-                } else {
-                    console.log("err:", data);
-                    console.error("Received undefined data from API");
-                    // Optionally set some default values or show an error message
-                }
-
-
-            }
+                setQueryCount({
+                    inAppMessages: data.inAppMessages || 0,
+                    pending: data.pending || 0,
+                    resolved: data.resolved || 0,
+                    escalated: data.escalated || 0,
+                    firstThreeIncomingQueries: data.firstThreeIncomingQueries || []
+                });
+            },
+            updateErrorPopup,
+            updateErrorText
         });
-        updateLoadingPopup(false);
-    }, []);
 
-    console.log(queryCounts)
+    }, []);
 
 
 
@@ -158,6 +145,7 @@ const CustomerCare_Queries = () => {
 
 
     return (
+
         <div id={Style.Queries_mainDiv}>
 
             <Header
@@ -169,6 +157,7 @@ const CustomerCare_Queries = () => {
                 <p id={Style.Queries_headerText}>Queries</p>
 
                 <div id={Style.Queries_mapDiv}>
+
                     {
                         stats_card7.map((obj, index) => {
 
@@ -211,9 +200,12 @@ const CustomerCare_Queries = () => {
                 <div id={Style.Performance_CardDiv}>
 
                     {
-                        progressDiv.map((obj) => {
+                        progressDiv.map((obj, index) => {
+
                             return (
+
                                 <Progress_Bar
+                                    key={index}
                                     text={obj.text}
                                     infoText={obj.infoText}
                                     percent={obj.percent} />
@@ -247,13 +239,21 @@ const CustomerCare_Queries = () => {
 
 
                             <div id={Style.ticketTable_wrapperDiv}>
+
                                 <table className={Style.dashboardTable}>
-                                    <tr id={Style.headerTable}>
-                                        <th>User</th>
-                                        <th>Ticket No</th>
-                                        <th>QueryType</th>
-                                        <th>Action</th>
-                                    </tr>
+
+                                    <thead>
+
+                                        <tr id={Style.headerTable}>
+
+                                            <th>User</th>
+                                            <th>Ticket No</th>
+                                            <th>QueryType</th>
+                                            <th>Action</th>
+                                        </tr>
+
+                                    </thead>
+
 
                                     <tbody>
 
@@ -289,7 +289,7 @@ const CustomerCare_Queries = () => {
                                                         <td className={Style.Ticket_tableData}>{obj.query_type_name}</td>
                                                         <td>
                                                             <Link to={`/QueryReview/${obj.ticket_id}`}>
-                                                                 <Button text={"Accept"} />
+                                                                <Button text={"Accept"} />
                                                             </Link>
                                                         </td>
 
@@ -328,7 +328,7 @@ const CustomerCare_Queries = () => {
                                 <Link to={"/performance"}>
                                     <button>See All</button>
                                 </Link>
-                                
+
                             </div>
                         </div>
 
@@ -337,69 +337,74 @@ const CustomerCare_Queries = () => {
 
                             <table>
 
-                                <tr>
-                                    <td>Days</td>
-                                    <td className={Style.Daily_CallText}>Calls</td>
-                                    <td className={Style.Daily_CallText}>Mails</td>
-                                    <td className={Style.Daily_CallText}>Msg</td>
-                                    <td></td>
-                                </tr>
+                                <tbody>
 
-                                <tr>
-                                    <td>Monday</td>
-                                    <td className={Style.Daily_CallText}>46</td>
-                                    <td className={Style.Daily_CallText}>5</td>
-                                    <td className={Style.Daily_CallText}>5</td>
-                                    <td><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
-                                </tr>
+                                    <tr>
+                                        <td>Days</td>
+                                        <td className={Style.Daily_CallText}>Calls</td>
+                                        <td className={Style.Daily_CallText}>Mails</td>
+                                        <td className={Style.Daily_CallText}>Msg</td>
+                                        <td></td>
+                                    </tr>
 
-                                <tr>
-                                    <td>Tuesday</td>
-                                    <td className={Style.Daily_CallText}>22</td>
-                                    <td className={Style.Daily_CallText}>13</td>
-                                    <td className={Style.Daily_CallText}>13</td>
-                                    <td><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
-                                </tr>
+                                    <tr>
+                                        <td>Monday</td>
+                                        <td className={Style.Daily_CallText}>46</td>
+                                        <td className={Style.Daily_CallText}>5</td>
+                                        <td className={Style.Daily_CallText}>5</td>
+                                        <td><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                    </tr>
 
-                                <tr>
-                                    <td>Wednesday</td>
-                                    <td className={Style.Daily_CallText}>45</td>
-                                    <td className={Style.Daily_CallText}>8</td>
-                                    <td className={Style.Daily_CallText}>8</td>
-                                    <td><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
-                                </tr>
+                                    <tr>
+                                        <td>Tuesday</td>
+                                        <td className={Style.Daily_CallText}>22</td>
+                                        <td className={Style.Daily_CallText}>13</td>
+                                        <td className={Style.Daily_CallText}>13</td>
+                                        <td><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                    </tr>
 
-                                <tr>
-                                    <td>Thursday</td>
-                                    <td className={Style.Daily_CallText}>34</td>
-                                    <td className={Style.Daily_CallText}>5</td>
-                                    <td className={Style.Daily_CallText}>77</td>
-                                    <td><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
-                                </tr>
+                                    <tr>
+                                        <td>Wednesday</td>
+                                        <td className={Style.Daily_CallText}>45</td>
+                                        <td className={Style.Daily_CallText}>8</td>
+                                        <td className={Style.Daily_CallText}>8</td>
+                                        <td><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                    </tr>
 
-                                <tr>
-                                    <td>Friday</td>
-                                    <td className={Style.Daily_CallText}>89</td>
-                                    <td className={Style.Daily_CallText}>5</td>
-                                    <td className={Style.Daily_CallText}>5</td>
-                                    <td><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
-                                </tr>
+                                    <tr>
+                                        <td>Thursday</td>
+                                        <td className={Style.Daily_CallText}>34</td>
+                                        <td className={Style.Daily_CallText}>5</td>
+                                        <td className={Style.Daily_CallText}>77</td>
+                                        <td><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                    </tr>
 
-                                <tr>
-                                    <td>Saturday</td>
-                                    <td className={Style.Daily_CallText}>33</td>
-                                    <td className={Style.Daily_CallText}>13</td>
-                                    <td className={Style.Daily_CallText}>5</td>
-                                    <td><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
-                                </tr>
+                                    <tr>
+                                        <td>Friday</td>
+                                        <td className={Style.Daily_CallText}>89</td>
+                                        <td className={Style.Daily_CallText}>5</td>
+                                        <td className={Style.Daily_CallText}>5</td>
+                                        <td><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                    </tr>
 
-                                <tr>
-                                    <td>Sunday</td>
-                                    <td className={Style.Daily_CallText}>21</td>
-                                    <td className={Style.Daily_CallText}>5</td>
-                                    <td className={Style.Daily_CallText}>44</td>
-                                    <td><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
-                                </tr>
+                                    <tr>
+                                        <td>Saturday</td>
+                                        <td className={Style.Daily_CallText}>33</td>
+                                        <td className={Style.Daily_CallText}>13</td>
+                                        <td className={Style.Daily_CallText}>5</td>
+                                        <td><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Sunday</td>
+                                        <td className={Style.Daily_CallText}>21</td>
+                                        <td className={Style.Daily_CallText}>5</td>
+                                        <td className={Style.Daily_CallText}>44</td>
+                                        <td><button style={{ backgroundColor: "transparent", border: "none", color: "#0E093C", fontSize: "0.75rem", borderRadius: "0.5rem", height: "1.87rem", width: "5.12rem" }}>View Details</button></td>
+                                    </tr>
+
+                                </tbody>
+
                             </table>
                         </div>
                     </div>

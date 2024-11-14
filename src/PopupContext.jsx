@@ -10,7 +10,7 @@ export const PopupContextHook = () => useContext(myContext)
 const PopupContext = ({ children }) => {
 
   const [resolutionState, setResolutionState] = useState({
-    query:[],
+    query: [],
     email: '',
     ticket_id: '',
     message: '',
@@ -29,6 +29,7 @@ const PopupContext = ({ children }) => {
   const [successResolution, setSucessResolution] = useState(false)
   const [confirmEscalation, setConfirmEscalation] = useState(false)
   const [successEscalation, setSucessEscalation] = useState(false)
+  const [signInSuccess, setSignInSuccess] = useState(false);
   const [loadingPopup, setLoadingPopup] = useState(false);
   const [errorPopup, setErrorPopup] = useState(false);
   const [errorText, setErrorText] = useState("");
@@ -65,7 +66,11 @@ const PopupContext = ({ children }) => {
   }
   const updateErrorText = (data) => {
     setErrorText(data)
-}
+  }
+
+  const updateSignInSuccess = (data) =>{
+    setSignInSuccess(data)
+  }
 
   return (
     <myContext.Provider value={{
@@ -88,7 +93,9 @@ const PopupContext = ({ children }) => {
       errorPopup,
       updateErrorPopup,
       errorText,
-      updateErrorText
+      updateErrorText,
+      updateSignInSuccess,
+      signInSuccess
 
     }}>
       {children}

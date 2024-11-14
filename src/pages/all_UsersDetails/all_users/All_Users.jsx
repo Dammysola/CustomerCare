@@ -4,13 +4,12 @@ import Staff_Card from '../../../components/staff_card/Staff_Card'
 import blue from '../../../assets/svg/blue.svg'
 import gold from '../../../assets/svg/gold.svg'
 import black from '../../../assets/svg/black.svg'
-// import person from '../../../assets/images/Person1.png'
 import arrow_down from '../../../assets/svg/arrow_down-dark.svg'
 import search from '../../../assets/svg/Search.svg'
 import InputField from '../../../components/input/InputField'
 import Header from '../../../components/header/Header'
-import { Link } from 'react-router-dom'
-import { getAllUsersProvider } from '../../api_detaills/provider/auth_provider'
+import { getAllUsersProvider } from '../../api_detaills/provider/users_provider'
+import { PopupContextHook } from '../../../PopupContext'
 
 
 
@@ -18,6 +17,7 @@ import { getAllUsersProvider } from '../../api_detaills/provider/auth_provider'
 
 const All_Users = () => {
     // State to manage the active toggle button
+    const { updateErrorText, updateErrorPopup } = PopupContextHook()
 
     const [toggleIndex, setToggleIndex] = useState(0)
 
@@ -45,7 +45,9 @@ const All_Users = () => {
                     subscribedUsers: data.subscribedUsers || [],
                     unsubscribedUsers: data.unsubscribedUsers || []
                 });
-            }
+            },
+            updateErrorPopup,
+            updateErrorText
         });
     }, []);
 
@@ -57,13 +59,17 @@ const All_Users = () => {
     const allUsers_arr = users.allUsers
     const unsubscribedUsers_arr = users.unsubscribedUsers
 
+
+
     return (
+
         <div id={Style.All_Users_mainDiv}>
             {/* Header component */}
 
             <Header
                 headerText={"All Users"}
-                headerInfo={"Here's an information on all Users"} />
+                headerInfo={"Here's an information on all Users"}
+            />
 
             <div id={Style.All_Users_wrapperDiv}>
 
@@ -102,8 +108,10 @@ const All_Users = () => {
 
                     {/* Render all users */}
 
-                    {toggleIndex == 0 &&
-                        allUsers_arr.map((object) => {
+                    {
+                        toggleIndex == 0 &&
+
+                        allUsers_arr.map((object, index) => {
 
                             let verify = object.subscription_type == "blue" ? blue
                                 : object.subscription_type == "gold" ? gold
@@ -111,15 +119,16 @@ const All_Users = () => {
                                         : ""
 
                             return (
+
                                 < Staff_Card
-                                    key={object.id} // Add a unique key prop
+                                    key={index} // Add a unique key prop
                                     img={object.profile_picture}
                                     verified={verify}
                                     status={object.status}
                                     name={object.username}
                                     position={object.country}
                                     to={`/userDetails/${object.phone}`}
-                                    />
+                                />
                             )
 
                         })
@@ -129,7 +138,7 @@ const All_Users = () => {
 
                     {
                         toggleIndex == 1 &&
-                        subscribedUsers_arr.map((object) => {
+                        subscribedUsers_arr.map((object, index) => {
 
                             let verify = object.subscription_type == "blue" ? blue
                                 : object.subscription_type == "gold" ? gold
@@ -137,40 +146,43 @@ const All_Users = () => {
 
 
                             return (
+
                                 <Staff_Card
-                                    key={object.id} // Add a unique key prop
+                                    key={index} // Add a unique key prop
                                     img={object.profile_picture}
                                     verified={verify}
                                     status={object.status}
                                     name={object.username}
                                     position={object.country}
                                     to={`/userDetails/${object.phone}`}
-                                    />
+                                />
                             )
                         })
                     }
 
-                    
-                        {/* Render unsubscribed users */}
 
-                    {toggleIndex == 2 &&
+                    {/* Render unsubscribed users */}
+
+                    {
+                        toggleIndex == 2 &&
+
                         unsubscribedUsers_arr.map((object) => {
 
                             return (
 
                                 <Staff_Card
-                                    key={object.id} // Add a unique key prop
+                                    key={index} // Add a unique key prop
                                     img={object.profile_picture}
                                     status={object.status}
                                     name={object.username}
                                     position={object.country}
                                     to={`/userDetails/${object.phone}`}
-                                    />
+                                />
                             )
 
                         })
-                    } 
-                    
+                    }
+
                 </div>
             </div>
         </div>

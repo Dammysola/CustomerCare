@@ -6,8 +6,8 @@ import InputField from '../../../components/input/InputField'
 import search from '../../../assets/svg/Search.svg'
 import filter from '../../../assets/svg/Complete_filter_img.svg'
 import { Link } from 'react-router-dom'
-import { getQueryCountProvider } from '../../api_detaills/provider/auth_provider'
 import { PopupContextHook } from '../../../PopupContext'
+import { getQueryCountProvider } from '../../api_detaills/provider/query_provider'
 
 
 

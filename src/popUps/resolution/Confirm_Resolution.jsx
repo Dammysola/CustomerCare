@@ -1,7 +1,7 @@
 import React from 'react'
 import Style from "./Confirm_Resolution.module.css"
 import { PopupContextHook } from '../../PopupContext'
-import { postQueryResolveProvider } from '../../pages/api_detaills/provider/auth_provider'
+import { postQueryResolveProvider } from '../../pages/api_detaills/provider/query_provider'
 
 
 
@@ -11,20 +11,14 @@ const Confirm_Resolution = () => {
 
 
     const submitResolution = () => {
-        // e.preventDefault(e)
 
         let body = resolutionState
 
-        console.log(body);
 
         postQueryResolveProvider(body, updateLoadingPopup, updateConfirmResolutionPopup, updateErrorText, updateErrorPopup, updateSuccessResolutionPopup)
     }
 
-    const success = () => {
 
-        updateConfirmResolutionPopup(false)
-        updateSuccessResolutionPopup(true)
-    }
 
     return (
         <div id={Style.Escalate_Query_mainDiv}>

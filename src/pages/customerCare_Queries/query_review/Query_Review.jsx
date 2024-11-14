@@ -9,28 +9,31 @@ import Button from '../../../components/button/Button'
 import ReactCalendarHeatmap from 'react-calendar-heatmap'
 import Staff_Card from '../../../components/staff_card/Staff_Card'
 import { PopupContextHook } from '../../../PopupContext'
-import { getQueryDetailsProvider, postQueryResolveProvider } from '../../api_detaills/provider/auth_provider'
 import { useParams } from 'react-router-dom'
 import { getEmail } from '../../api_detaills/constant/local_storage'
+import { getQueryDetailsProvider } from '../../api_detaills/provider/query_provider'
 
 
 
 const Query_Review = () => {
 
-
+    // Extract ticketId from URL parameters
     let { ticketId } = useParams()
 
+    // Destructure popup context hooks for managing popups
     const { updateConfirmResolutionPopup, updateConfirmEscalationPopup, updateResolutionState, updateLoadingPopup,
          } = PopupContextHook()
 
-
+    // Function to handle escalation of a query
     const escalate = () => {
 
         updateConfirmEscalationPopup(true)
     }
 
+    // Get today's date
     const today = new Date();
 
+    // Function to generate a range of dates between startDate and endDate
     const getRange = (startDate, endDate) => {
 
         const date = new Date(startDate.getTime());
@@ -44,6 +47,7 @@ const Query_Review = () => {
         return dates;
     };
 
+    // Generate random values for the heatmap
     const randomValues = getRange(
         new Date(today.getFullYear(), today.getMonth() - 25, today.getDate()),
         today
@@ -52,6 +56,7 @@ const Query_Review = () => {
         count: Math.floor(Math.random() * 4),
     }));
 
+    // State to hold query details
     const [queryDetails, setQueryDetails] = useState({
 
         userDetails: [],
@@ -60,8 +65,7 @@ const Query_Review = () => {
 
     });
 
-
-
+    // Effect to fetch query details when component mounts
     useEffect(() => {
 
         const ccEmail = getEmail()
@@ -79,11 +83,13 @@ const Query_Review = () => {
         });
     }, []);
 
+    
     const userDetails_arr = queryDetails.userDetails
     const customerCareDetails_arr = queryDetails.customerCareAgentDetails
     const queries_arr = queryDetails.queries
 
 
+    // State to hold resolution details
     const [resolution, setResolution] = useState({
         query: [],
         email: '',
@@ -92,7 +98,7 @@ const Query_Review = () => {
     })
   
     
-
+    // Function to handle form submission for resolution
     const confirm = (e) => {
 
         e.preventDefault()
@@ -106,6 +112,8 @@ const Query_Review = () => {
         updateConfirmResolutionPopup(true)
     }
 
+
+    // Function to handle input changes in the resolution form
     const Details = (e) => {
 
         const name = e.target.name
@@ -174,7 +182,7 @@ const Query_Review = () => {
                                 queries_arr.map((obj) => {
 
                                     return (
-                                        <tr>
+                                        <tr key={obj.ticket_id}>
                                             <td className={Style.Query_Review_headerText}>{obj.ticket_id}</td>
                                             <td className={Style.Query_Review_headerText}>{obj.category}</td>
                                             <td>
@@ -248,7 +256,7 @@ const Query_Review = () => {
                         customerCareDetails_arr.map((obj) => {
 
                             return (
-                                <div id={Style.customerDetails_Div}>
+                                <div id={Style.customerDetails_Div} key={obj.email}>
                                     <p id={Style.onboardedText}>Date Onboarded : 9 Oct 2024</p>
 
                                     <div id={Style.img_infoDiv}>
